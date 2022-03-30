@@ -81,7 +81,7 @@
     left: 0;
     top: 0;
     transition: all .4s;
-    opacity: .4;
+    /*opacity: .4;*/
   }
 
   section:hover {
@@ -98,16 +98,19 @@
 
   section:first-child .bg {
     background: linear-gradient(180deg, #010101, #f60, #010101);
+    background: rgba(0,0,0,.7);
 
   }
 
   section:nth-child(2) .bg {
     background: linear-gradient(180deg, #010101, #a63890, #010101);
+    background: rgba(0,0,0,.5);
 
   }
 
   section:nth-child(3) .bg {
     background: linear-gradient(180deg, #010101, #00ff8a, #010101);
+    background: rgba(0,0,0,.6);
 
   }
 
@@ -217,8 +220,15 @@
   </a>
 </section>
 <div id="container" touch-action="none">
-  <video src="3.mp4" autoplay loop></video>
+  <video src="1.mp4" autoplay loop></video>
 </div>
+<script>
+let video=document.querySelector('video')
+let src=['1.mp4','2.mp4','3.mp4','4.mp4','5.mp4']
+let ran=Math.floor(Math.random()*5)
+video.src=src[ran]
+
+</script>
 <script src="https://s2.pstatp.com/cdn/expire-1-M/three.js/88/three.min.js"></script>
 <script id="vertexShader" type="x-shader/x-vertex">
     void main() {
