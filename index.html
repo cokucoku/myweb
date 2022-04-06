@@ -220,13 +220,16 @@
   </a>
 </section>
 <div id="container" touch-action="none">
-  <video src="1.mp4" autoplay loop muted></video>
+  <video src="1.mp4" autoplay1 loop muted></video>
 </div>
 <script>
 let video=document.querySelector('video')
 let src=['2.mp4','6.mp4']
 let ran=Math.floor(Math.random()*2)
 video.src=src[ran]
+document.addEventListener('touchstart',()=>{
+    video.play()
+})
 
 </script>
 
