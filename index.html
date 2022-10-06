@@ -401,6 +401,7 @@ btn_play.addEventListener('click', () => {
     let i = document.createElement('i')
     let video = document.createElement('video')
     video.src = 'video.mp4'
+    video.autoplay=true
     wink.appendChild(i)
     wink.appendChild(video)
     i.className = 'iconfont icon-close'
