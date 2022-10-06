@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81661efd-86b1-4f45-b28e-29ce9a4f6b7f" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="81661efd-86b1-4f45-b28e-29ce9a4f6b7f" name="默认的" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="229" column="30" selection-start-line="229" selection-start-column="30" selection-end-line="229" selection-end-column="30" />
+            <state relative-caret-position="48">
+              <caret line="207" column="65" lean-forward="true" selection-start-line="207" selection-start-column="65" selection-end-line="207" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -50,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -110,15 +108,15 @@
       <workItem from="1648784513078" duration="1775000" />
       <workItem from="1648861301956" duration="2063000" />
       <workItem from="1649233500798" duration="16000" />
-      <workItem from="1649235583748" duration="1319000" />
+      <workItem from="1649235583748" duration="2089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21514000" />
+    <option name="totallyTimeSpent" value="22284000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
@@ -156,8 +154,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="229" column="30" selection-start-line="229" selection-start-column="30" selection-end-line="229" selection-end-column="30" />
+        <state relative-caret-position="48">
+          <caret line="207" column="65" lean-forward="true" selection-start-line="207" selection-start-column="65" selection-end-line="207" selection-end-column="65" />
         </state>
       </provider>
     </entry>

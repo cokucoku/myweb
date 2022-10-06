@@ -5,234 +5,464 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>个人主页</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_3352173_7m2uv72ag24.css">
+  <title>Leeao个人网页</title>
   <style>
   * {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     list-style: none;
     box-sizing: border-box;
   }
 
-  body {
-    background-image: url("bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    width: 100vw;
-    overflow: hidden;
-  }
-  #container{
-    position: absolute;
+  .win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
     width: 100%;
     height: 100%;
-    z-index: 1;}
-  #container video{width: 100%;
-    height: 100%;object-fit: cover}
-  section {
-    width: 33.33%;
+  }
+
+  .wink {
+    position: absolute;
+    max-width: 800px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: solid 20px rgba(122, 122, 122, 1);
+  }
+
+  .wink video {
+    width: 100%;
     height: 100%;
-    position: relative;
+    object-fit: contain;
+  }
+
+  .wink i {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: conic-gradient(from 45deg, #ffad61, #ff7b42, #a52d1c);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    border-right: solid 1px rgba(255, 255, 255, .3);
-    transition: all .4s;
-    z-index: 23;
-  }
-
-  section:last-child {
-    border-right: none;
-  }
-
-  section .photo {
-    background: url("photo.jpg");
-    width: 20%;
-    padding-bottom: 20%;
-    background-size: cover;
+    font-size: 20px;
     border-radius: 100%;
-    position: absolute;
-    left: 50%;
-    margin-left: -10%;
-    top: 10%;
-    border: solid 3px rgba(255, 255, 255, .6);
-    filter: drop-shadow(0px 0px 17px rgba(0, 0, 0, .9));
-    animation: down .4s both;
+    top: -50px;
+    right: -50px;
+    cursor: pointer;
   }
 
-  @keyframes down {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(10px);
-    }
 
-
-  }
-
-  section .bg {
+  .win .mark {
+    background: rgba(0, 0, 0, .8);
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    transition: all .4s;
-    /*opacity: .4;*/
   }
 
-  section:hover {
-    width: 50%;
+  body {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    user-select: none;
+    width: 100%;
+    overflow-x: hidden;
+
   }
 
-  section:hover .bg {
-    transform: scale(4);
+  .tx {
+    border-radius: 100%
   }
 
-  section:hover .li {
-    transform: scale(1.5);
+  section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  section:first-child .bg {
-    background: linear-gradient(180deg, #010101, #f60, #010101);
-    background: rgba(0,0,0,.3);
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
+  section:nth-child(1) .bg {
+    background-image: url("bg1.jpg");
   }
 
   section:nth-child(2) .bg {
-    background: linear-gradient(180deg, #010101, #a63890, #010101);
-    background: rgba(0,0,0,.2);
-
+    background-image: url("bg2.jpg");
   }
 
   section:nth-child(3) .bg {
-    background: linear-gradient(180deg, #010101, #00ff8a, #010101);
-    background: rgba(0,0,0,.3);
-
+    background-image: url("bg3.jpg");
   }
 
-  section .li {
-    color: #fff;
-    position: relative;
+  section:nth-child(4) .bg {
+    background-image: url("bg4.jpg");
+  }
+
+  h1 {
+    z-index: 1;
+    font-size: 88px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+  }
+
+  h2 {
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 8px;
+  }
+
+
+  section .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, .9));
-    cursor: pointer;
-    text-decoration: none;
-    transition: all .7s;
   }
 
-  section .li .ico {
-    width: 56px;
-    height: 56px;
+  .sec1 .content img {
+    width: 140px;
+    border: solid 4px #fff;
+    filter: drop-shadow(1px 1px 3px black);
+    margin-bottom: 10vh;
+    margin-top: -30vh;
+  }
+
+  .pos {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    bottom: 4vh;
+    transform: translate(-50%, 0);
+  }
+
+  .pos .iconfont {
+    padding-right: .5vw;
+  }
+
+  .works ul {
+    padding-top: 14vh;
+  }
+
+  .works ul li {
+    line-height: 44px;
     margin-bottom: 15px;
-    filter: drop-shadow(1px 1px 0px #fff);
   }
 
-  section .li .cn {
-    font-size: 38px;
-    letter-spacing: 1em;
-    text-indent: 1em;
+  .works ul li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: conic-gradient(from 45deg, #ffad61, #ff7b42, #a52d1c);
+    border-radius: 22px;
+    padding: 0 25px;
   }
 
-  section .li .en {
-    font-size: 20px;
+  .works ul li a:hover {
+    background: conic-gradient(from 45deg, #ffad61, #ff7b42, #f00);
   }
 
-  section .li .ico {
+  .works ul li i {
+    font-size: 12px;
+    padding-right: .5vw;
+  }
+
+  .life {
+    width: 100vw;
+  }
+
+  .life ul {
+    padding-top: 14vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .life ul li {
+    width: 12%;
+    padding-bottom: 10%;
+    margin-right: 2vw;
+    position: relative;
+  }
+
+  .life ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: .5vw;
+    position: absolute;
+    background: #fff;
+    top: 0;
+  }
+
+  .more {
+    text-decoration: none;
+    margin-top: 5vh;
+    color: #000;
+    background: #fff;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: none;
+    transition: all .4s;
+    font-weight: bold;
+  }
+
+  .more:hover {
+    background: #ffad61;
+    color: #fff;
+  }
+
+  .btn_play {
+    background: url("btn_play.png");
+    width: 77px;
+    height: 77px;
     background-size: cover;
-  }
-
-  section:nth-child(1) .li .ico {
-    background-image: url("life.png");
-  }
-
-  section:nth-child(2) .li .ico {
-    background-image: url("work.png");
-  }
-
-  section:nth-child(3) .li .ico {
-    background-image: url("article.png");
+    cursor: pointer;
+    margin-top: 66px;
   }
 
   @media screen and (max-width: 768px) {
-    body {
-      flex-direction: column;
+    h1 {
+      font-size: 8vw;
     }
 
-    section {
-      width: 100%;
-      border-right: none;
-      border-bottom: solid 1px rgba(255, 255, 255, .3);
-    }
-    section:hover {
-    width: 100%;
-      height: 200%;
-   }
-
-    section .li .cn {
-      font-size: 5vw;
-    }
-
-    section .li .en {
+    h2 {
       font-size: 3vw;
     }
 
-    section .photo {
-      left: 5%;
-      margin-left: 0;
-      top: 50%;
-      margin-top: -10%;
+    .life ul li {
+      width: 24%;
+      padding-bottom: 20%;
+      margin-bottom: 2vw;
+    }
+
+    .more {
+      width: 20px;
+      height: 20px;
+    }
+
+    .more i {
+      font-size: 12px;
+    }
+
+    .wink {
+      width: 82%;
+      border-width: 4px;
+    }
+
+    .wink i {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+      top: -15px;
+      right: -15px;
     }
 
   }
+
 
   </style>
 </head>
 <body>
-<section>
+<section class="sec1">
   <div class="bg"></div>
-  <a class="li" href="https://leeao8.gitee.io/life/" target="_blank">
-    <div class="ico"></div>
-    <div class="cn">生活</div>
-    <div class="en">Life</div>
-  </a>
+  <div class="content">
+    <img src="photo.jpg" class="tx">
+    <h1>LEEAO个人网页</h1>
+    <h2>LEEAO's Personal Web Sites</h2>
+    <div class="btn_play"></div>
+    <div class="pos">
+      <div class="iconfont icon-dingwei"></div>
+      <div class="dw">福建•厦门</div>
+    </div>
+  </div>
 </section>
 <section>
   <div class="bg"></div>
-  <div class="photo"></div>
-  <a class="li" href="https://docs.leeao82.com/" target="_blank">
-    <div class="ico"></div>
-    <div class="cn">工作</div>
-    <div class="en">Work</div>
-  </a>
+  <div class="content">
+    <h1>工作</h1>
+    <h2>Works</h2>
+    <div class="works">
+      <ul>
+        <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
+        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
+        <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
 <section>
   <div class="bg"></div>
-  <a class="li" href="https://www.yuque.com/leeao/articles" target="_blank">
-    <div class="ico"></div>
-    <div class="cn">文章</div>
-    <div class="en">Article</div>
-  </a>
+  <div class="content">
+    <h1>生活</h1>
+    <h2>Lifes</h2>
+    <div class="life">
+      <ul>
+        <li><img src="https://leeao8.gitee.io/life/album/20220508/9.jpg"></li>
+        <li><img src="https://leeao8.gitee.io/life/album/20220430/1.jpg"></li>
+        <li><img src="https://leeao8.gitee.io/life/album/20220417/1.jpg"></li>
+        <li><img src="https://leeao8.gitee.io/life/album/20160510/1.jpg"></li>
+        <li><img src="https://leeao8.gitee.io/life/album/20160206/20.jpg"></li>
+      </ul>
+    </div>
+    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
+  </div>
 </section>
-<div id="container" touch-action="none">
-  <video src="1.mp4" autoplay loop muted></video>
-</div>
+<section>
+  <div class="bg"></div>
+  <div class="content">
+    <h1>文章</h1>
+    <h2>Articles</h2>
+  </div>
+</section>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/SplitText3.min.js"></script>
 <script>
-let video=document.querySelector('video')
-let src=['2.mp4','6.mp4']
-let ran=Math.floor(Math.random()*2)
-video.src=src[ran]
-document.addEventListener('ready',()=>{
-    console.log("d")
-    //video.play()
+//
+let split = new SplitText('.sec1 h1', {
+    type: 'chars'
+});
+let chars = split.chars;
+let t1 = gsap.timeline({
+
+})
+chars.forEach(function (el) {
+    let pz = gsap.utils.random(800, 800);
+    let op = gsap.utils.random(0, 1);
+    let sc = gsap.utils.random(1, 2);
+    let du = gsap.utils.random(2, 4);
+    let ro = gsap.utils.random(-360, 360);
+    t1.from(el, {
+        duration: du,
+        opacity: op,
+        rotationY: ro,
+        scale: sc,
+        z: pz,
+        transformOrigin: "0% 50% 50%",
+        ease: "power1.inout"
+    },0)
+})
+//
+let section = document.querySelectorAll('section');
+section.forEach(function (el, index) {
+    let innerWidth = window.innerWidth;
+    let innerHeight = window.innerHeight;
+    let bg = el.querySelector('.bg')
+    //bg.style.backgroundImage = `url(https://picsum.photos/${innerWidth}/${innerHeight}?v=${index})`
+    if (index) {
+        bg.style.backgroundPosition = `50% ${innerHeight / 2}px`;
+        gsap.to(bg, {
+            backgroundPosition: `50% ${-innerHeight / 2}px`,
+            ease: "none",
+            scrollTrigger: {
+                trigger: el,
+                scrub: true
+            }
+        });
+    }
+
+    // the first image should be positioned against the top. Use px on the animating part to work with GSAP.
+    else {
+        bg.style.backgroundPosition = "50% 0px";
+        gsap.to(bg, {
+            backgroundPosition: `50% ${-innerHeight / 2}px`,
+            ease: "none",
+            scrollTrigger: {
+                trigger: el,
+                start: "top top",
+                scrub: true
+            }
+        });
+    }
+})
+gsap.set(".life li", {y: 200});
+ScrollTrigger.batch(".life li", {
+    onEnter: (elements) => {
+        gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+    },
+    onLeave: (elements) => {
+        gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+    },
+    onEnterBack: (elements) => {
+        gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+    },
+    onLeaveBack: (elements) => {
+        gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+    }
+});
+//
+let btn_play = document.querySelector('.btn_play')
+let iconClose = document.querySelector('.icon-close')
+let win = document.querySelector('.win')
+btn_play.addEventListener('click', () => {
+    let win = document.createElement('div')
+    let wink = document.createElement('div')
+    let mark = document.createElement('div')
+    let i = document.createElement('i')
+    let video = document.createElement('video')
+    video.src = 'video.mp4'
+    wink.appendChild(i)
+    wink.appendChild(video)
+    i.className = 'iconfont icon-close'
+    win.className = 'win'
+    wink.className = 'wink'
+    mark.className = 'mark'
+    win.appendChild(wink)
+    win.appendChild(mark)
+    document.body.appendChild(win)
+    gsap.set(wink, {
+        scale: 1,
+        y: '200%'
+    });
+    gsap.to(wink, {
+        duration: .4, scale: 1, y: '0%'
+    });
+    gsap.set(mark, {
+        opacity: 0
+    });
+    gsap.to(mark, {
+        opacity: 1
+    });
+    i.addEventListener('click', () => {
+        gsap.to(wink, {
+            duration: .4, scale: 0, y: '200%',
+            onComplete: function () {
+                win.remove()
+            }
+        });
+        gsap.to(mark, {
+            opacity: 0
+        });
+    })
+
 })
 
 </script>
-
 </body>
 </html>
