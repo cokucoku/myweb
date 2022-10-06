@@ -15,6 +15,41 @@
     box-sizing: border-box;
   }
 
+  .menu {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 44;
+  }
+
+  .menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu li:after {
+    content: '';
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .menu li i {
+    font-style: normal;
+    white-space: nowrap;
+    font-size: 14px;
+    padding-right: 8px;
+    opacity: 0;
+    transition: all .5s
+  }
+
+  .menu li:hover i {
+    opacity: 1;
+  }
+
   .win {
     position: fixed;
     top: 0;
@@ -99,19 +134,19 @@
     background-attachment: fixed;
   }
 
-  section:nth-child(1) .bg {
+  section:nth-child(2) .bg {
     background-image: url("bg1.jpg");
   }
 
-  section:nth-child(2) .bg {
+  section:nth-child(3) .bg {
     background-image: url("bg2.jpg");
   }
 
-  section:nth-child(3) .bg {
+  section:nth-child(4) .bg {
     background-image: url("bg3.jpg");
   }
 
-  section:nth-child(4) .bg {
+  section:nth-child(5) .bg {
     background-image: url("bg4.jpg");
   }
 
@@ -201,7 +236,7 @@
 
   .life ul li {
     width: 12%;
-    padding-bottom: 10%;
+    padding-bottom: 12%;
     margin-right: 2vw;
     position: relative;
   }
@@ -210,10 +245,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: .5vw;
+    padding: .4vw;
     position: absolute;
     background: #fff;
     top: 0;
+    border-radius: 100%;
   }
 
   .more {
@@ -257,7 +293,7 @@
 
     .life ul li {
       width: 24%;
-      padding-bottom: 20%;
+      padding-bottom: 24%;
       margin-bottom: 2vw;
     }
 
@@ -289,6 +325,14 @@
   </style>
 </head>
 <body>
+<div class="menu">
+  <ul>
+    <li><i>首页</i></li>
+    <li><i>工作</i></li>
+    <li><i>生活</i></li>
+    <li><i>文章</i></li>
+  </ul>
+</div>
 <section class="sec1">
   <div class="bg"></div>
   <div class="content">
@@ -392,8 +436,6 @@ ScrollTrigger.batch(".life li", {
 });
 //
 let btn_play = document.querySelector('.btn_play')
-let iconClose = document.querySelector('.icon-close')
-let win = document.querySelector('.win')
 btn_play.addEventListener('click', () => {
     let win = document.createElement('div')
     let wink = document.createElement('div')
@@ -401,7 +443,7 @@ btn_play.addEventListener('click', () => {
     let i = document.createElement('i')
     let video = document.createElement('video')
     video.src = 'video.mp4'
-    video.autoplay=true
+    video.autoplay = true
     wink.appendChild(i)
     wink.appendChild(video)
     i.className = 'iconfont icon-close'
@@ -436,6 +478,15 @@ btn_play.addEventListener('click', () => {
         });
     })
 
+})
+//右边导航
+let li = document.querySelector('.menu').querySelectorAll('li')
+li.forEach((el,xh) => {
+    el.addEventListener('click', () => {
+        section[xh].scrollIntoView({behavior: "smooth", block: "end"});
+
+
+    })
 })
 
 </script>
