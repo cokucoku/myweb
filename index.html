@@ -342,33 +342,7 @@
 </section>
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
-<script src="js/SplitText3.min.js"></script>
 <script>
-//
-let split = new SplitText('.sec1 h1', {
-    type: 'chars'
-});
-let chars = split.chars;
-let t1 = gsap.timeline({
-
-})
-chars.forEach(function (el) {
-    let pz = gsap.utils.random(800, 800);
-    let op = gsap.utils.random(0, 1);
-    let sc = gsap.utils.random(1, 2);
-    let du = gsap.utils.random(2, 4);
-    let ro = gsap.utils.random(-360, 360);
-    t1.from(el, {
-        duration: du,
-        opacity: op,
-        rotationY: ro,
-        scale: sc,
-        z: pz,
-        transformOrigin: "0% 50% 50%",
-        ease: "power1.inout"
-    },0)
-})
-//
 let section = document.querySelectorAll('section');
 section.forEach(function (el, index) {
     let innerWidth = window.innerWidth;
