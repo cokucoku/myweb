@@ -17,7 +17,7 @@
 
   .menu {
     position: fixed;
-    right: 30px;
+    right: 40px;
     top: 50%;
     transform: translate(0, -50%);
     z-index: 44;
@@ -35,6 +35,7 @@
     height: 10px;
     border-radius: 100%;
     cursor: pointer;
+    transition: all .5s
   }
 
   .menu li i {
@@ -43,11 +44,18 @@
     font-size: 14px;
     padding-right: 8px;
     opacity: 0;
-    transition: all .5s
+    transition: all .5s;
+    transform: translateX(-50%);
   }
 
-  .menu li:hover i {
+  .menu li:hover i, .menu li.cur i {
     opacity: 1;
+    color: #ffad61;
+    transform: translateX(0%);
+  }
+
+  .menu li:hover:after, .menu li.cur:after {
+    background: #ffad61;
   }
 
   .win {
@@ -211,6 +219,7 @@
     background: conic-gradient(from 45deg, #ffad61, #ff7b42, #a52d1c);
     border-radius: 22px;
     padding: 0 25px;
+    justify-content: center;
   }
 
   .works ul li a:hover {
@@ -283,8 +292,10 @@
   }
 
   @media screen and (max-width: 768px) {
+    .menu{
+      right: 15px;}
     h1 {
-      font-size: 8vw;
+      font-size: 10vw;
     }
 
     h2 {
@@ -355,6 +366,7 @@
       <ul>
         <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
         <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
+        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
         <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
       </ul>
     </div>
@@ -387,8 +399,10 @@
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script>
+let tops = [];
 let section = document.querySelectorAll('section');
 section.forEach(function (el, index) {
+    tops.push(el.offsetTop)
     let innerWidth = window.innerWidth;
     let innerHeight = window.innerHeight;
     let bg = el.querySelector('.bg')
@@ -481,10 +495,24 @@ btn_play.addEventListener('click', () => {
 })
 //右边导航
 let li = document.querySelector('.menu').querySelectorAll('li')
-li.forEach((el,xh) => {
+li.forEach((el, xh) => {
     el.addEventListener('click', () => {
         section[xh].scrollIntoView({behavior: "smooth", block: "end"});
-
+    })
+})
+li[0].classList.add('cur')
+window.addEventListener('scroll', () => {
+    let f = tops.filter((el) => {
+        return this.scrollY >= el
+    })
+    let which = Math.max(...f)
+    let xh = tops.indexOf(which)
+    li.forEach((el, index) => {
+        if (xh === index) {
+            el.classList.add('cur')
+        } else {
+            el.classList.remove('cur')
+        }
 
     })
 })
