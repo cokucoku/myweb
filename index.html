@@ -14,6 +14,16 @@
     list-style: none;
     box-sizing: border-box;
   }
+  .web{
+    display: none;}
+  .bai{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+  }
 
   ne-quote {
     color: #888;
@@ -147,7 +157,7 @@
     top: 50%;
     z-index: 2;
     border: 12px solid #ddd;
-    border-image: linear-gradient(#ffad61, #db2c1e,#ffad61) 1 1;
+    border-image: linear-gradient(#ffad61, #db2c1e, #ffad61) 1 1;
   }
 
   .wink video {
@@ -187,6 +197,7 @@
     user-select: none;
     width: 100%;
     overflow-x: hidden;
+    background: #000;
 
   }
 
@@ -491,14 +502,15 @@
 
   /*定义滚动条轨道 内阴影+圆角*/
   ::-webkit-scrollbar-track {
-     background: #444;
+    background: #444;
   }
 
   /*定义滑块 内阴影+圆角*/
   ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(#ffad61, #db2c1e,#ffad61);
+    background-image: linear-gradient(#ffad61, #db2c1e, #ffad61);
     border-radius: 4px;
   }
+
   .nr::-webkit-scrollbar-thumb {
     background: #666;
   }
@@ -507,8 +519,9 @@
   @media screen and (max-width: 768px) {
     .article li {
       width: 50%;
-      font-size: 12px;padding-right: 10px;
-    padding-bottom: 10px;
+      font-size: 12px;
+      padding-right: 10px;
+      padding-bottom: 10px;
     }
 
     .progress {
@@ -562,70 +575,95 @@
   </style>
 </head>
 <body>
-<section class="sec1">
-  <div class="bg"></div>
-  <div class="content">
-    <img src="photo.jpg" class="tx">
-    <h1>LEEAO个人网页</h1>
-    <h2>LEEAO's Personal Web Sites</h2>
-    <div class="btn_play"></div>
-    <div class="pos">
-      <div class="iconfont icon-dingwei"></div>
-      <div class="dw">福建•厦门</div>
+<div class="web">
+  <section class="sec1">
+    <div class="bg"></div>
+    <div class="content">
+      <img src="photo.jpg" class="tx">
+      <h1>LEEAO个人网页</h1>
+      <h2>LEEAO's Personal Web Sites</h2>
+      <div class="btn_play"></div>
+      <div class="pos">
+        <div class="iconfont icon-dingwei"></div>
+        <div class="dw">福建•厦门</div>
+      </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="bg"></div>
-  <div class="content">
-    <h1>工作</h1>
-    <h2>Works</h2>
-    <div class="works">
-      <ul>
-        <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
-        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
-        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
-        <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
-      </ul>
+  </section>
+  <section>
+    <div class="bg"></div>
+    <div class="content">
+      <h1>工作</h1>
+      <h2>Works</h2>
+      <div class="works">
+        <ul>
+          <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
+          <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
+          <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
+          <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="bg"></div>
-  <div class="content">
-    <h1>生活</h1>
-    <h2>Lifes</h2>
-    <div class="life">
-      <ul>
-      </ul>
+  </section>
+  <section>
+    <div class="bg"></div>
+    <div class="content">
+      <h1>生活</h1>
+      <h2>Lifes</h2>
+      <div class="life">
+        <ul>
+        </ul>
+      </div>
+      <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
     </div>
-    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
-  </div>
-</section>
-<section>
-  <div class="bg"></div>
-  <div class="content">
-    <h1>文章</h1>
-    <h2>Articles</h2>
-    <div class="article">
-      <ul>
+  </section>
+  <section>
+    <div class="bg"></div>
+    <div class="content">
+      <h1>文章</h1>
+      <h2>Articles</h2>
+      <div class="article">
+        <ul>
 
-      </ul>
+        </ul>
+      </div>
     </div>
+  </section>
+  <div class="progress"></div>
+  <div class="menu">
+    <ul>
+      <li><i>首页</i><span></span></li>
+      <li><i>工作</i><span></span></li>
+      <li><i>生活</i><span></span></li>
+      <li><i>文章</i><span></span></li>
+    </ul>
   </div>
-</section>
-<div class="progress"></div>
-<div class="menu">
-  <ul>
-    <li><i>首页</i><span></span></li>
-    <li><i>工作</i><span></span></li>
-    <li><i>生活</i><span></span></li>
-    <li><i>文章</i><span></span></li>
-  </ul>
 </div>
+<div class="bai"></div>
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
+<script src="js/loadImg.js"></script>
 <script>
+//先加载全站资源LOADING
+let bai = document.querySelector('.bai')
+//加載...
+let f = ["bg1", "bg2", "bg3", "bg4", "photo"];
+let fm='.jpg'
+let url=[]
+for(let i=0;i<f.length;i++){
+    url.push(f[i]+fm)
+}
+new loadImg({
+    imgs: url,
+    onComplete: function () {
+        bai.remove()
+        document.querySelector('.web').style.display='block'
+    },
+    onLoad: function (at) {
+        bai.innerText = at
+
+    }
+});
+
 //文章获取
 let articleul = document.querySelector('.article').querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/article').then((rs) => {
@@ -717,6 +755,21 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
         li.appendChild(img)
         lifeul.appendChild(li)
     })
+    gsap.set(".life li", {y: 200});
+    ScrollTrigger.batch(".life li", {
+        onEnter: (elements) => {
+            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+        },
+        onLeave: (elements) => {
+            gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+        },
+        onEnterBack: (elements) => {
+            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+        },
+        onLeaveBack: (elements) => {
+            gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+        }
+    });
 })
 //
 let tops = [];
@@ -753,21 +806,7 @@ section.forEach(function (el, index) {
         });
     }
 })
-gsap.set(".life li", {y: 200});
-ScrollTrigger.batch(".life li", {
-    onEnter: (elements) => {
-        gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
-    },
-    onLeave: (elements) => {
-        gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
-    },
-    onEnterBack: (elements) => {
-        gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
-    },
-    onLeaveBack: (elements) => {
-        gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
-    }
-});
+
 //
 let btn_play = document.querySelector('.btn_play')
 btn_play.addEventListener('click', () => {
