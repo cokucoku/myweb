@@ -26,36 +26,63 @@
   .menu li {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
 
-  .menu li:after {
-    content: '';
-    background: #fff;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
+  .menu li span {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    transition: all .5s;
     cursor: pointer;
-    transition: all .5s
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu li span:after {
+    content: '';
+    background: rgba(255, 255, 255, 1);
+    width: 8px;
+    height: 8px;
+    border-radius: 20% 30% 30% 70%/60% 40% 60% 40%;
+    transition: all .5s;
+  }
+
+  .menu li span:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-radius: 20% 30% 30% 70%/60% 40% 60% 40%;
+    transition: all .5s;
+    border: solid 1px rgba(255, 255, 255, 1);
   }
 
   .menu li i {
     font-style: normal;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 12px;
     padding-right: 8px;
     opacity: 0;
     transition: all .5s;
     transform: translateX(-50%);
   }
 
-  .menu li:hover i, .menu li.cur i {
+  .menu li:hover i {
     opacity: 1;
     color: #ffad61;
     transform: translateX(0%);
   }
-
-  .menu li:hover:after, .menu li.cur:after {
+  .menu li:hover span:after, .menu li.cur span:after {
     background: #ffad61;
+    transform: scale(.5);
+  }
+
+  .menu li.cur span:before, .menu li:hover span:before {
+    border-color: #ffad61;
   }
 
   .win {
@@ -142,19 +169,19 @@
     background-attachment: fixed;
   }
 
-  section:nth-child(2) .bg {
+  section:nth-child(1) .bg {
     background-image: url("bg1.jpg");
   }
 
-  section:nth-child(3) .bg {
+  section:nth-child(2) .bg {
     background-image: url("bg2.jpg");
   }
 
-  section:nth-child(4) .bg {
+  section:nth-child(3) .bg {
     background-image: url("bg3.jpg");
   }
 
-  section:nth-child(5) .bg {
+  section:nth-child(4) .bg {
     background-image: url("bg4.jpg");
   }
 
@@ -163,8 +190,6 @@
     font-size: 88px;
     font-weight: 300;
     letter-spacing: 12px;
-    perspective: 800px;
-    transform-style: preserve-3d;
   }
 
   h2 {
@@ -186,7 +211,9 @@
     border: solid 4px #fff;
     filter: drop-shadow(1px 1px 3px black);
     margin-bottom: 10vh;
-    margin-top: -30vh;
+    margin-top: -20vh;
+    background-image: radial-gradient(#ffad61, #db2c1e);
+
   }
 
   .pos {
@@ -236,7 +263,7 @@
   }
 
   .life ul {
-    padding-top: 14vh;
+    padding-top: 8vh;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -248,6 +275,41 @@
     padding-bottom: 12%;
     margin-right: 2vw;
     position: relative;
+    margin-bottom: 2vw;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  .life ul li .text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 100%;
+    opacity: 0;
+    transition: all .4s;
+    transform: scale(1);
+    cursor: pointer;
+  }
+
+  .life ul li .text span {
+    font-size: 1.2vw;
+    padding: 0 1vw;
+    text-align: center;
+  }
+
+  .life ul li .text i {
+    font-size: .8vw;
+  }
+
+  .life ul li:hover .text {
+    opacity: 1;
+    transform: scale(1.8);
   }
 
   .life ul li img {
@@ -291,9 +353,26 @@
     margin-top: 66px;
   }
 
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-image: linear-gradient(to right, #db38b5, #01b3e3, #25ce7b, #fdc741, #ff6b01, #fc4236);
+    background-attachment: fixed;
+    z-index: 888;
+  }
+
   @media screen and (max-width: 768px) {
-    .menu{
-      right: 15px;}
+    .progress {
+      height: 8px;
+    }
+
+    .menu {
+      right: 15px;
+    }
+
     h1 {
       font-size: 10vw;
     }
@@ -307,6 +386,7 @@
       padding-bottom: 24%;
       margin-bottom: 2vw;
     }
+
 
     .more {
       width: 20px;
@@ -336,14 +416,6 @@
   </style>
 </head>
 <body>
-<div class="menu">
-  <ul>
-    <li><i>首页</i></li>
-    <li><i>工作</i></li>
-    <li><i>生活</i></li>
-    <li><i>文章</i></li>
-  </ul>
-</div>
 <section class="sec1">
   <div class="bg"></div>
   <div class="content">
@@ -379,11 +451,6 @@
     <h2>Lifes</h2>
     <div class="life">
       <ul>
-        <li><img src="https://leeao8.gitee.io/life/album/20220508/9.jpg"></li>
-        <li><img src="https://leeao8.gitee.io/life/album/20220430/1.jpg"></li>
-        <li><img src="https://leeao8.gitee.io/life/album/20220417/1.jpg"></li>
-        <li><img src="https://leeao8.gitee.io/life/album/20160510/1.jpg"></li>
-        <li><img src="https://leeao8.gitee.io/life/album/20160206/20.jpg"></li>
       </ul>
     </div>
     <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
@@ -396,9 +463,43 @@
     <h2>Articles</h2>
   </div>
 </section>
+<div class="progress"></div>
+<div class="menu">
+  <ul>
+    <li><i>首页</i><span></span></li>
+    <li><i>工作</i><span></span></li>
+    <li><i>生活</i><span></span></li>
+    <li><i>文章</i><span></span></li>
+  </ul>
+</div>
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script>
+//生活图片获取
+let lifeul = document.querySelector('.life').querySelector('ul')
+fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life').then((rs) => {
+    return rs.json()
+
+}).then((data) => {
+    lifeul.innerHTML = ''
+    data.forEach((el) => {
+        let li = document.createElement('li')
+        let text = document.createElement('div')
+        let i = document.createElement('i')
+        i.innerText = el.time
+        let span = document.createElement('span')
+        span.innerText = el.name
+        text.className = 'text'
+        text.appendChild(i)
+        text.appendChild(span)
+        let img = document.createElement('img')
+        img.src = el.pic
+        li.appendChild(text)
+        li.appendChild(img)
+        lifeul.appendChild(li)
+    })
+})
+//
 let tops = [];
 let section = document.querySelectorAll('section');
 section.forEach(function (el, index) {
@@ -456,7 +557,12 @@ btn_play.addEventListener('click', () => {
     let mark = document.createElement('div')
     let i = document.createElement('i')
     let video = document.createElement('video')
-    video.src = 'video.mp4'
+    fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/video').then((rs) => {
+        return rs.json()
+    }).then((data) => {
+        video.src = data.url
+    })
+
     video.autoplay = true
     wink.appendChild(i)
     wink.appendChild(video)
@@ -513,10 +619,16 @@ window.addEventListener('scroll', () => {
         } else {
             el.classList.remove('cur')
         }
-
     })
 })
-
+//进度条
+gsap.from('.progress', {
+    width: 0,
+    ease: 'none',
+    scrollTrigger: {
+        scrub: true
+    }
+});
 </script>
 </body>
 </html>
