@@ -15,18 +15,61 @@
     box-sizing: border-box;
   }
 
+  ne-quote {
+    color: #888;
+    position: relative;
+
+  }
+
+  .nr {
+    background: #000;
+    padding: 25px;
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .nr .title {
+    font-size: 3vw;
+    color: #f60;
+    text-align: center;
+    padding-bottom: 2vh;
+  }
+
+  .nr .ms {
+    font-size: 1vw;
+  }
+
+  .nr .ms p {
+    margin-bottom: 15px;
+  }
+
+  .nr .ms img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .menu {
     position: fixed;
     right: 40px;
     top: 50%;
     transform: translate(0, -50%);
     z-index: 44;
+    background: rgba(165, 45, 28, .5);
+    padding: 5px;
+    border-radius: 10px;
   }
 
   .menu li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+  }
+
+  .menu li:last-child {
+    margin-bottom: 0;
   }
 
   .menu li span {
@@ -68,14 +111,16 @@
     padding-right: 8px;
     opacity: 0;
     transition: all .5s;
-    transform: translateX(-50%);
+    transform: translateX(-140%);
+    position: absolute;
   }
 
   .menu li:hover i {
     opacity: 1;
     color: #ffad61;
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
+
   .menu li:hover span:after, .menu li.cur span:after {
     background: #ffad61;
     transform: scale(.5);
@@ -100,9 +145,9 @@
     width: 100%;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
-    border: solid 20px rgba(122, 122, 122, 1);
+    border: 12px solid #ddd;
+    border-image: linear-gradient(#ffad61, #db2c1e,#ffad61) 1 1;
   }
 
   .wink video {
@@ -156,6 +201,24 @@
     align-items: center;
     justify-content: center;
   }
+
+  section:nth-child(4) {
+    align-items: start;
+    width: 100%;
+  }
+
+  section:nth-child(4) .content {
+    width: 100%;
+  }
+
+  section:nth-child(4) h1 {
+    padding: 8vh 0 0;
+  }
+
+  section:nth-child(4) .article {
+    width: 80vw
+  }
+
 
   .bg {
     position: absolute;
@@ -309,7 +372,7 @@
 
   .life ul li:hover .text {
     opacity: 1;
-    transform: scale(1.8);
+    transform: scale(1.5);
   }
 
   .life ul li img {
@@ -321,6 +384,62 @@
     background: #fff;
     top: 0;
     border-radius: 100%;
+  }
+
+  .article {
+    padding-top: 12vh;
+  }
+
+  .article ul {
+    flex-wrap: wrap;
+    display: flex;
+    width: calc(100% + 15px);
+  }
+
+  .article li {
+    width: 16.666666666667%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all .4s;
+    padding-right: 15px;
+    padding-bottom: 15px;
+  }
+
+  .article li a {
+    background: rgba(0, 0, 0, .8);
+    width: 100%;
+    padding: 8px 8px 8px 28px;
+    border-radius: 12px;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .4s;
+    position: relative;
+    align-items: center;
+  }
+
+  .article li a:hover {
+    background: rgba(255, 102, 0, .8);
+  }
+
+  .article li a:before {
+    left: 10px;
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    background: #f60;
+    border-radius: 100%;
+    transition: all .4s;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .article li a:hover:before {
+    background: #fff;
   }
 
   .more {
@@ -364,7 +483,32 @@
     z-index: 888;
   }
 
+
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+     background: #444;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#ffad61, #db2c1e,#ffad61);
+    border-radius: 4px;
+  }
+  .nr::-webkit-scrollbar-thumb {
+    background: #666;
+  }
+
+
   @media screen and (max-width: 768px) {
+    .article li {
+      width: 50%;
+    }
+
     .progress {
       height: 8px;
     }
@@ -461,6 +605,11 @@
   <div class="content">
     <h1>文章</h1>
     <h2>Articles</h2>
+    <div class="article">
+      <ul>
+
+      </ul>
+    </div>
   </div>
 </section>
 <div class="progress"></div>
@@ -475,6 +624,74 @@
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script>
+//文章获取
+let articleul = document.querySelector('.article').querySelector('ul')
+fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/article').then((rs) => {
+    return rs.json()
+
+}).then((data) => {
+    articleul.innerHTML = ''
+    data.forEach((el) => {
+        let li = document.createElement('li')
+        let a = document.createElement('a')
+        a.innerText = el.title
+        li.appendChild(a)
+        li.addEventListener('click', () => {
+            let win = document.createElement('div')
+            let wink = document.createElement('div')
+            let mark = document.createElement('div')
+            let nr = document.createElement('div')
+            let title = document.createElement('h3')
+            let ms = document.createElement('div')
+            nr.className = 'nr'
+            title.className = 'title'
+            ms.className = 'ms'
+            ms.innerHTML = el.nr
+            title.innerText = el.title
+            nr.appendChild(title)
+            nr.appendChild(ms)
+            let i = document.createElement('i')
+
+            wink.appendChild(i)
+            wink.appendChild(nr)
+
+            i.className = 'iconfont icon-close'
+            win.className = 'win'
+            wink.className = 'wink'
+            mark.className = 'mark'
+            win.appendChild(wink)
+            win.appendChild(mark)
+            document.body.appendChild(win)
+            gsap.set(wink, {
+                scale: 1,
+                x: '-50%',
+                y: '100%'
+            });
+            gsap.to(wink, {
+                duration: .4, scale: 1, y: '-50%'
+            });
+            gsap.set(mark, {
+                opacity: 0
+            });
+            gsap.to(mark, {
+                opacity: 1
+            });
+            i.addEventListener('click', () => {
+                gsap.to(wink, {
+                    duration: .4, scale: 0, y: '100%',
+                    onComplete: function () {
+                        win.remove()
+                    }
+                });
+                gsap.to(mark, {
+                    opacity: 0
+                });
+            })
+
+        })
+        articleul.appendChild(li)
+    })
+})
 //生活图片获取
 let lifeul = document.querySelector('.life').querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life').then((rs) => {
@@ -575,10 +792,11 @@ btn_play.addEventListener('click', () => {
     document.body.appendChild(win)
     gsap.set(wink, {
         scale: 1,
-        y: '200%'
+        x: '-50%',
+        y: '100%'
     });
     gsap.to(wink, {
-        duration: .4, scale: 1, y: '0%'
+        duration: .4, scale: 1, y: '-50%'
     });
     gsap.set(mark, {
         opacity: 0
@@ -588,7 +806,7 @@ btn_play.addEventListener('click', () => {
     });
     i.addEventListener('click', () => {
         gsap.to(wink, {
-            duration: .4, scale: 0, y: '200%',
+            duration: .4, scale: 0, y: '100%',
             onComplete: function () {
                 win.remove()
             }
