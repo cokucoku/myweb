@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="658" column="59" selection-start-line="658" selection-start-column="59" selection-end-line="658" selection-end-column="59" />
+            <state relative-caret-position="362">
+              <caret line="661" column="50" selection-start-line="661" selection-start-column="50" selection-end-line="661" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#section#0;n#body#0;n#html#0;n#!!top" />
@@ -53,6 +53,7 @@
       <find>section</find>
       <find>142</find>
       <find>sectio</find>
+      <find>1.jpg.jpg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,12 +129,12 @@
       <workItem from="1648861301956" duration="2063000" />
       <workItem from="1649233500798" duration="16000" />
       <workItem from="1649235583748" duration="2089000" />
-      <workItem from="1665364427598" duration="24126000" />
+      <workItem from="1665364427598" duration="24804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46410000" />
+    <option name="totallyTimeSpent" value="47088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -175,8 +176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="658" column="59" selection-start-line="658" selection-start-column="59" selection-end-line="658" selection-end-column="59" />
+        <state relative-caret-position="362">
+          <caret line="661" column="50" selection-start-line="661" selection-start-column="50" selection-end-line="661" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#section#0;n#body#0;n#html#0;n#!!top" />

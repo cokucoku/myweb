@@ -638,7 +638,7 @@
     </ul>
   </div>
 </div>
-<div class="bai"></div>
+<div class="bai">0%</div>
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script src="js/loadImg.js"></script>
@@ -646,7 +646,7 @@
 //先加载全站资源LOADING
 let bai = document.querySelector('.bai')
 //加載...
-let f = ["bg1", "bg2", "bg3", "bg4", "photo"];
+let f = ["bg1", "bg2", "bg3", "bg4", "photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1"];
 let fm='.jpg'
 let url=[]
 for(let i=0;i<f.length;i++){
@@ -657,9 +657,15 @@ new loadImg({
     onComplete: function () {
         bai.remove()
         document.querySelector('.web').style.display='block'
+        document.querySelector('.web').style.opacity='0'
+        setTimeout(()=>{
+            gsap.to(document.querySelector('.web'), {
+                duration: .4, opacity: 1
+            });
+        },10)
     },
     onLoad: function (at) {
-        bai.innerText = at
+        bai.innerText = at+'%'
 
     }
 });
