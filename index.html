@@ -14,9 +14,12 @@
     list-style: none;
     box-sizing: border-box;
   }
-  .web{
-    display: none;}
-  .bai{
+
+  .web {
+    display: none;
+  }
+
+  .bai {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -39,14 +42,14 @@
   }
 
   .nr .title {
-    font-size: 3vw;
+    font-size: 44px;
     color: #f60;
     text-align: center;
     padding-bottom: 2vh;
   }
 
   .nr .ms {
-    font-size: 1vw;
+    font-size: 16px;
   }
 
   .nr .ms p {
@@ -227,7 +230,7 @@
   }
 
   section:nth-child(4) .article {
-    width: 80vw
+    width: 50vw
   }
 
 
@@ -408,7 +411,7 @@
   }
 
   .article li {
-    width: 16.666666666667%;
+    width: 33.33%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -517,6 +520,18 @@
 
 
   @media screen and (max-width: 768px) {
+    .nr .title {
+      font-size: 18px;
+    }
+
+    .nr .ms {
+      font-size: 14px;
+    }
+
+    section:nth-child(4) .article {
+      width: 80vw;
+    }
+
     .article li {
       width: 50%;
       font-size: 12px;
@@ -558,7 +573,7 @@
 
     .wink {
       width: 82%;
-      border-width: 4px;
+      border-width: 8px;
     }
 
     .wink i {
@@ -647,25 +662,25 @@
 let bai = document.querySelector('.bai')
 //加載...
 let f = ["bg1", "bg2", "bg3", "bg4", "photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1"];
-let fm='.jpg'
-let url=[]
-for(let i=0;i<f.length;i++){
-    url.push(f[i]+fm)
+let fm = '.jpg'
+let url = []
+for (let i = 0; i < f.length; i++) {
+    url.push(f[i] + fm)
 }
 new loadImg({
     imgs: url,
     onComplete: function () {
         bai.remove()
-        document.querySelector('.web').style.display='block'
-        document.querySelector('.web').style.opacity='0'
-        setTimeout(()=>{
+        document.querySelector('.web').style.display = 'block'
+        document.querySelector('.web').style.opacity = '0'
+        setTimeout(() => {
             gsap.to(document.querySelector('.web'), {
                 duration: .4, opacity: 1
             });
-        },10)
+        }, 10)
     },
     onLoad: function (at) {
-        bai.innerText = at+'%'
+        bai.innerText = at + '%'
 
     }
 });
