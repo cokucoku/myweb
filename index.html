@@ -15,10 +15,6 @@
     box-sizing: border-box;
   }
 
-  .web {
-    display: none;
-  }
-
   .bai {
     width: 100vw;
     height: 100vh;
@@ -26,6 +22,11 @@
     align-items: center;
     justify-content: center;
     font-size: 4vw;
+    background: #000;
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
   }
 
   ne-quote {
@@ -201,7 +202,10 @@
     width: 100%;
     overflow-x: hidden;
     background: #000;
-
+  }
+  .dj,.dj body{
+    height: 100vh;
+    overflow: hidden;
   }
 
   .tx {
@@ -590,68 +594,66 @@
   </style>
 </head>
 <body>
-<div class="web">
-  <section class="sec1">
-    <div class="bg"></div>
-    <div class="content">
-      <img src="photo.jpg" class="tx">
-      <h1>LEEAO个人网页</h1>
-      <h2>LEEAO's Personal Web Sites</h2>
-      <div class="btn_play"></div>
-      <div class="pos">
-        <div class="iconfont icon-dingwei"></div>
-        <div class="dw">福建•厦门</div>
-      </div>
+<section class="sec1">
+  <div class="bg"></div>
+  <div class="content">
+    <img src="photo.jpg" class="tx">
+    <h1>LEEAO个人网页</h1>
+    <h2>LEEAO's Personal Web Sites</h2>
+    <div class="btn_play"></div>
+    <div class="pos">
+      <div class="iconfont icon-dingwei"></div>
+      <div class="dw">福建•厦门</div>
     </div>
-  </section>
-  <section>
-    <div class="bg"></div>
-    <div class="content">
-      <h1>工作</h1>
-      <h2>Works</h2>
-      <div class="works">
-        <ul>
-          <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
-          <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
-          <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
-          <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="bg"></div>
-    <div class="content">
-      <h1>生活</h1>
-      <h2>Lifes</h2>
-      <div class="life">
-        <ul>
-        </ul>
-      </div>
-      <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
-    </div>
-  </section>
-  <section>
-    <div class="bg"></div>
-    <div class="content">
-      <h1>文章</h1>
-      <h2>Articles</h2>
-      <div class="article">
-        <ul>
-
-        </ul>
-      </div>
-    </div>
-  </section>
-  <div class="progress"></div>
-  <div class="menu">
-    <ul>
-      <li><i>首页</i><span></span></li>
-      <li><i>工作</i><span></span></li>
-      <li><i>生活</i><span></span></li>
-      <li><i>文章</i><span></span></li>
-    </ul>
   </div>
+</section>
+<section>
+  <div class="bg"></div>
+  <div class="content">
+    <h1>工作</h1>
+    <h2>Works</h2>
+    <div class="works">
+      <ul>
+        <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
+        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
+        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
+        <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="bg"></div>
+  <div class="content">
+    <h1>生活</h1>
+    <h2>Lifes</h2>
+    <div class="life">
+      <ul>
+      </ul>
+    </div>
+    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
+  </div>
+</section>
+<section>
+  <div class="bg"></div>
+  <div class="content">
+    <h1>文章</h1>
+    <h2>Articles</h2>
+    <div class="article">
+      <ul>
+
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="progress"></div>
+<div class="menu">
+  <ul>
+    <li><i>首页</i><span></span></li>
+    <li><i>工作</i><span></span></li>
+    <li><i>生活</i><span></span></li>
+    <li><i>文章</i><span></span></li>
+  </ul>
 </div>
 <div class="bai">0%</div>
 <script src="js/gsap.min.js"></script>
@@ -659,6 +661,7 @@
 <script src="js/loadImg.js"></script>
 <script>
 //先加载全站资源LOADING
+document.querySelector('html').classList.add('dj')
 let bai = document.querySelector('.bai')
 //加載...
 let f = ["bg1", "bg2", "bg3", "bg4", "photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1"];
@@ -667,17 +670,20 @@ let url = []
 for (let i = 0; i < f.length; i++) {
     url.push(f[i] + fm)
 }
+let tops = [];
+let section = document.querySelectorAll('section');
 new loadImg({
     imgs: url,
     onComplete: function () {
-        bai.remove()
-        document.querySelector('.web').style.display = 'block'
-        document.querySelector('.web').style.opacity = '0'
-        setTimeout(() => {
-            gsap.to(document.querySelector('.web'), {
-                duration: .4, opacity: 1
-            });
-        }, 10)
+        gsap.to(bai, {
+            duration: .4,
+            opacity: 0,
+            onComplete: () => {
+                bai.remove()
+                document.querySelector('html').classList.remove('dj')
+            }
+        });
+
     },
     onLoad: function (at) {
         bai.innerText = at + '%'
@@ -776,25 +782,24 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
         li.appendChild(img)
         lifeul.appendChild(li)
     })
-    gsap.set(".life li", {y: 200});
+    gsap.set(".life li", {y: 400,opacity:0});
     ScrollTrigger.batch(".life li", {
         onEnter: (elements) => {
             gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
         },
         onLeave: (elements) => {
-            gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+            gsap.to(elements, {duration: .3, y: 400, opacity: 0, stagger: 0.15});
         },
         onEnterBack: (elements) => {
             gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
         },
         onLeaveBack: (elements) => {
-            gsap.to(elements, {duration: .3, y: -100, opacity: 0, stagger: 0.15});
+            gsap.to(elements, {duration: .3, y: 400, opacity: 0, stagger: 0.15});
         }
     });
 })
 //
-let tops = [];
-let section = document.querySelectorAll('section');
+
 section.forEach(function (el, index) {
     tops.push(el.offsetTop)
     let innerWidth = window.innerWidth;
