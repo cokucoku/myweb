@@ -425,7 +425,7 @@
   }
 
   .article li a {
-    background: rgba(0, 0, 0, .8);
+    background: linear-gradient(45deg, #db38b5, #01b3e3);
     width: 100%;
     padding: 8px 8px 8px 28px;
     border-radius: 12px;
@@ -439,7 +439,7 @@
   }
 
   .article li a:hover {
-    background: rgba(255, 102, 0, .8);
+    background: linear-gradient(45deg, #01b3e3, #db38b5);
   }
 
   .article li a:before {
@@ -730,7 +730,6 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
             win.appendChild(mark)
             document.body.appendChild(win)
             gsap.set(wink, {
-                scale: 1,
                 x: '-50%',
                 y: '100%'
             });
@@ -745,7 +744,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
             });
             i.addEventListener('click', () => {
                 gsap.to(wink, {
-                    duration: .4, scale: 0, y: '100%',
+                    duration: .4,  y: '100%',
                     onComplete: function () {
                         win.remove()
                     }
