@@ -203,7 +203,8 @@
     overflow-x: hidden;
     background: #000;
   }
-  .dj,.dj body{
+
+  .dj, .dj body {
     height: 100vh;
     overflow: hidden;
   }
@@ -218,6 +219,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   section:nth-child(4) {
@@ -524,6 +526,10 @@
 
 
   @media screen and (max-width: 768px) {
+    .nr {
+      padding: 15px;
+    }
+
     .nr .title {
       font-size: 18px;
     }
@@ -704,56 +710,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
         a.innerText = el.title
         li.appendChild(a)
         li.addEventListener('click', () => {
-            let win = document.createElement('div')
-            let wink = document.createElement('div')
-            let mark = document.createElement('div')
-            let nr = document.createElement('div')
-            let title = document.createElement('h3')
-            let ms = document.createElement('div')
-            nr.className = 'nr'
-            title.className = 'title'
-            ms.className = 'ms'
-            ms.innerHTML = el.nr
-            title.innerText = el.title
-            nr.appendChild(title)
-            nr.appendChild(ms)
-            let i = document.createElement('i')
-
-            wink.appendChild(i)
-            wink.appendChild(nr)
-
-            i.className = 'iconfont icon-close'
-            win.className = 'win'
-            wink.className = 'wink'
-            mark.className = 'mark'
-            win.appendChild(wink)
-            win.appendChild(mark)
-            document.body.appendChild(win)
-            gsap.set(wink, {
-                x: '-50%',
-                y: '100%'
-            });
-            gsap.to(wink, {
-                duration: .4, scale: 1, y: '-50%'
-            });
-            gsap.set(mark, {
-                opacity: 0
-            });
-            gsap.to(mark, {
-                opacity: 1
-            });
-            i.addEventListener('click', () => {
-                gsap.to(wink, {
-                    duration: .4,  y: '100%',
-                    onComplete: function () {
-                        win.remove()
-                    }
-                });
-                gsap.to(mark, {
-                    opacity: 0
-                });
-            })
-
+            openWin('article', el)
         })
         articleul.appendChild(li)
     })
@@ -771,7 +728,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
         let i = document.createElement('i')
         i.innerText = el.time
         let span = document.createElement('span')
-        span.innerText = el.name
+        span.innerText = el.title
         text.className = 'text'
         text.appendChild(i)
         text.appendChild(span)
@@ -780,8 +737,11 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
         li.appendChild(text)
         li.appendChild(img)
         lifeul.appendChild(li)
+        li.addEventListener('click', () => {
+            openWin('article', el)
+        })
     })
-    gsap.set(".life li", {y: 400,opacity:0});
+    gsap.set(".life li", {y: 400, opacity: 0});
     ScrollTrigger.batch(".life li", {
         onEnter: (elements) => {
             gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
@@ -815,10 +775,7 @@ section.forEach(function (el, index) {
                 scrub: true
             }
         });
-    }
-
-    // the first image should be positioned against the top. Use px on the animating part to work with GSAP.
-    else {
+    } else {
         bg.style.backgroundPosition = "50% 0px";
         gsap.to(bg, {
             backgroundPosition: `50% ${-innerHeight / 2}px`,
@@ -835,53 +792,7 @@ section.forEach(function (el, index) {
 //
 let btn_play = document.querySelector('.btn_play')
 btn_play.addEventListener('click', () => {
-    let win = document.createElement('div')
-    let wink = document.createElement('div')
-    let mark = document.createElement('div')
-    let i = document.createElement('i')
-    let video = document.createElement('video')
-    fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/video').then((rs) => {
-        return rs.json()
-    }).then((data) => {
-        video.src = data.url
-    })
-
-    video.autoplay = true
-    wink.appendChild(i)
-    wink.appendChild(video)
-    i.className = 'iconfont icon-close'
-    win.className = 'win'
-    wink.className = 'wink'
-    mark.className = 'mark'
-    win.appendChild(wink)
-    win.appendChild(mark)
-    document.body.appendChild(win)
-    gsap.set(wink, {
-        scale: 1,
-        x: '-50%',
-        y: '100%'
-    });
-    gsap.to(wink, {
-        duration: .4, scale: 1, y: '-50%'
-    });
-    gsap.set(mark, {
-        opacity: 0
-    });
-    gsap.to(mark, {
-        opacity: 1
-    });
-    i.addEventListener('click', () => {
-        gsap.to(wink, {
-            duration: .4, scale: 0, y: '100%',
-            onComplete: function () {
-                win.remove()
-            }
-        });
-        gsap.to(mark, {
-            opacity: 0
-        });
-    })
-
+    openWin('video')
 })
 //右边导航
 let li = document.querySelector('.menu').querySelectorAll('li')
@@ -913,6 +824,92 @@ gsap.from('.progress', {
         scrub: true
     }
 });
+
+//弹窗内容方法
+function openWin(type, el) {
+    let win = document.createElement('div')
+    let wink = document.createElement('div')
+    let mark = document.createElement('div')
+    let i = document.createElement('i')
+    i.className = 'iconfont icon-close'
+    win.className = 'win'
+    wink.className = 'wink'
+    mark.className = 'mark'
+    if (type === 'video') {
+        let video = document.createElement('video')
+        fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/video').then((rs) => {
+            return rs.json()
+        }).then((data) => {
+            video.src = data.url
+        })
+        video.autoplay = true
+        wink.appendChild(video)
+
+    } else {
+        let nr = document.createElement('div')
+        let title = document.createElement('h3')
+        let ms = document.createElement('div')
+        nr.className = 'nr'
+        title.className = 'title'
+        ms.className = 'ms'
+        ms.innerHTML = el.nr
+        title.innerText = el.title
+        nr.appendChild(title)
+        nr.appendChild(ms)
+        wink.appendChild(nr)
+        //处理图片懒加载 BEGIN
+        let lis = ms.querySelectorAll('li').length > 0 ? ms.querySelectorAll("li") : ms.querySelectorAll("p");
+        lis.forEach((el) => {
+            if (el.querySelector('img')) {
+                let img = el.querySelector('img')
+                img.dataset.src = img.src
+                img.src = 'grey2.gif'
+            }
+        })
+        setTimeout(() => {
+            const observer = new IntersectionObserver(nodes => {
+                nodes.forEach(v => {
+                    if (v.isIntersecting) { // 判断是否进入可视区域
+                        if (v.target.querySelector('img')) {
+                            v.target.querySelector('img').src = v.target.querySelector('img').dataset.src; // 赋值加载图片
+                            observer.unobserve(v.target); // 停止监听已加载的图片
+                        }
+                    }
+                });
+            });
+            lis.forEach(v => observer.observe(v));
+        }, 1000)
+        //处理图片懒加载 END
+    }
+    wink.appendChild(i)
+    win.appendChild(wink)
+    win.appendChild(mark)
+    document.body.appendChild(win)
+    gsap.set(wink, {
+        x: '-50%',
+        y: '100%'
+    });
+    gsap.to(wink, {
+        duration: .4, scale: 1, y: '-50%'
+    });
+    gsap.set(mark, {
+        opacity: 0
+    });
+    gsap.to(mark, {
+        opacity: 1
+    });
+    i.addEventListener('click', () => {
+        gsap.to(wink, {
+            duration: .4, y: '100%',
+            onComplete: function () {
+                win.remove()
+            }
+        });
+        gsap.to(mark, {
+            opacity: 0
+        });
+    })
+}
 </script>
 </body>
 </html>
