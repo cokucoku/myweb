@@ -18,12 +18,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="324" column="22" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="633" column="62" selection-start-line="633" selection-start-column="62" selection-end-line="633" selection-end-column="62" />
               <folding>
                 <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#2;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#section#3;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#17604#20470#0" />
               </folding>
@@ -94,6 +93,8 @@
       <find>batch</find>
       <find>code</find>
       <find>ne-q</find>
+      <find>bg</find>
+      <find>video</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,12 +185,12 @@
       <workItem from="1665464380473" duration="11755000" />
       <workItem from="1665536198363" duration="23398000" />
       <workItem from="1665623106398" duration="9196000" />
-      <workItem from="1665640162446" duration="5802000" />
+      <workItem from="1665640162446" duration="7207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99517000" />
+    <option name="totallyTimeSpent" value="100922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -397,12 +398,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="324" column="22" selection-start-line="324" selection-start-column="22" selection-end-line="324" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="633" column="62" selection-start-line="633" selection-start-column="62" selection-end-line="633" selection-end-column="62" />
           <folding>
             <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#3;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="e#17604#20470#0" />
           </folding>
