@@ -343,7 +343,9 @@
   }
 
   .life {
-    width: 100vw;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
   }
 
   .life ul {
@@ -355,11 +357,10 @@
   }
 
   .life ul li {
-    width: 12%;
-    padding-bottom: 12%;
-    margin-right: 2vw;
+    width: 8%;
+    padding-bottom: 8%;
+    margin: 1vw 1vw;
     position: relative;
-    margin-bottom: 2vw;
     overflow: hidden;
     border-radius: 100%;
   }
@@ -377,24 +378,25 @@
     border-radius: 100%;
     opacity: 0;
     transition: all .4s;
-    transform: scale(1);
     cursor: pointer;
   }
 
   .life ul li .text span {
-    font-size: 1.2vw;
+    font-size: 1vw;
     padding: 0 1vw;
-    text-align: center;
+    text-align: center;transition: all .4s;
+    transform: translateY(200%);
   }
 
   .life ul li .text i {
-    font-size: .8vw;
+    font-size: .6vw;transition: all .4s;transform: translateY(100%);
   }
 
   .life ul li:hover .text {
     opacity: 1;
-    transform: scale(1.5);
   }
+  .life ul li:hover .text span,.life ul li:hover .text i{transform: translateY(0%);}
+
 
   .life ul li img {
     width: 100%;
@@ -742,19 +744,19 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
             openWin('article', el)
         })
     })
-    gsap.set(".life li", {y: 400, opacity: 0});
+    gsap.set(".life li", {y: 200, opacity: 0});
     ScrollTrigger.batch(".life li", {
         onEnter: (elements) => {
             gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
         },
         onLeave: (elements) => {
-            gsap.to(elements, {duration: .3, y: 400, opacity: 0, stagger: 0.15});
+            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
         },
         onEnterBack: (elements) => {
             gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
         },
         onLeaveBack: (elements) => {
-            gsap.to(elements, {duration: .3, y: 400, opacity: 0, stagger: 0.15});
+            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
         }
     });
 })
