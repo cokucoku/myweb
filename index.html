@@ -717,7 +717,8 @@ new loadImg({
 
     }
 });
-
+//
+batch('.works li')
 //文章获取
 let articleul = document.querySelector('.article').querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/article').then((rs) => {
@@ -735,6 +736,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
         })
         articleul.appendChild(li)
     })
+    batch('.article li')
 })
 //生活图片获取
 let lifeul = document.querySelector('.life').querySelector('ul')
@@ -762,21 +764,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
             openWin('article', el)
         })
     })
-    gsap.set(".life li", {y: 200, opacity: 0});
-    ScrollTrigger.batch(".life li", {
-        onEnter: (elements) => {
-            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
-        },
-        onLeave: (elements) => {
-            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
-        },
-        onEnterBack: (elements) => {
-            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
-        },
-        onLeaveBack: (elements) => {
-            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
-        }
-    });
+    batch('.life li')
 })
 //
 
@@ -939,6 +927,25 @@ function openWin(type, el) {
             opacity: 0
         });
     })
+}
+
+//物体批量交替出现
+function batch(el) {
+    gsap.set(el, {y: 200, opacity: 0});
+    ScrollTrigger.batch(el, {
+        onEnter: (elements) => {
+            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+        },
+        onLeave: (elements) => {
+            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
+        },
+        onEnterBack: (elements) => {
+            gsap.to(elements, {duration: .3, y: 0, opacity: 1, stagger: 0.15});
+        },
+        onLeaveBack: (elements) => {
+            gsap.to(elements, {duration: .3, y: 200, opacity: 0, stagger: 0.15});
+        }
+    });
 }
 </script>
 </body>
