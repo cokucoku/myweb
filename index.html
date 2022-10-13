@@ -29,9 +29,14 @@
     top: 0;
   }
 
-  ne-quote {
-    color: #888;
+  blockquote {
+    color: #f60;
     position: relative;
+    border-left: solid 4px #888;
+    background: #222;
+    text-shadow: none;
+    padding: 12px;
+    margin-bottom: 15px;
 
   }
 
@@ -58,9 +63,13 @@
     padding: 0.5vh 0;
   }
 
+  .nr .ms a {
+    color: #f60;
+  }
 
   .nr .ms {
     font-size: 16px;
+    color: #ccc;
   }
 
   .nr .ms p {
@@ -305,7 +314,7 @@
     border: solid 4px #fff;
     filter: drop-shadow(1px 1px 3px black);
     margin-bottom: 10vh;
-    margin-top: -20vh;
+    /*margin-top: -20vh;*/
     background-image: radial-gradient(#ffad61, #db2c1e);
 
   }
@@ -313,10 +322,7 @@
   .pos {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    bottom: 4vh;
-    transform: translate(-50%, 0);
+    padding-top: 10vh;
   }
 
   .pos .iconfont {
@@ -447,7 +453,7 @@
 
   .article li a {
     background: linear-gradient(45deg, #db38b5, #23134e);
-    width: 100%;
+    width: fit-content;
     padding: 8px 8px 8px 28px;
     border-radius: 12px;
     height: 100%;
@@ -503,7 +509,7 @@
     height: 77px;
     background-size: cover;
     cursor: pointer;
-    margin-top: 66px;
+    margin-top: 10vh;
   }
 
   .progress {
@@ -617,6 +623,26 @@
 
   }
 
+  @media screen and (max-width: 420px) {
+    .menu {
+      right: inherit;
+      bottom: 15px;
+      top: inherit;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    .menu ul {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu li {
+      margin-right: 10px;
+      margin-bottom: inherit;
+    }
+    .menu li i{display: none}
+  }
 
   </style>
 </head>
