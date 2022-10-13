@@ -46,8 +46,18 @@
     font-size: 44px;
     color: #f60;
     text-align: center;
-    padding-bottom: 2vh;
+    padding-bottom: 3vh;
+    padding-top: 2vh;
   }
+
+  .nr .time {
+    text-align: center;
+    margin-bottom: 3vh;
+    border: solid 1px #444;
+    background: #222;
+    padding: 0.5vh 0;
+  }
+
 
   .nr .ms {
     font-size: 16px;
@@ -220,7 +230,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(0deg,#000,transparent,#000);
+    background: linear-gradient(0deg, #000, transparent, #000);
   }
 
   section:nth-child(4) {
@@ -384,18 +394,24 @@
   .life ul li .text span {
     font-size: 1vw;
     padding: 0 1vw;
-    text-align: center;transition: all .4s;
+    text-align: center;
+    transition: all .4s;
     transform: translateY(200%);
   }
 
   .life ul li .text i {
-    font-size: .6vw;transition: all .4s;transform: translateY(100%);
+    font-size: .6vw;
+    transition: all .4s;
+    transform: translateY(100%);
   }
 
   .life ul li:hover .text {
     opacity: 1;
   }
-  .life ul li:hover .text span,.life ul li:hover .text i{transform: translateY(0%);}
+
+  .life ul li:hover .text span, .life ul li:hover .text i {
+    transform: translateY(0%);
+  }
 
 
   .life ul li img {
@@ -430,7 +446,7 @@
   }
 
   .article li a {
-    background: linear-gradient(45deg, #db38b5, #01b3e3);
+    background: linear-gradient(45deg, #db38b5, #23134e);
     width: 100%;
     padding: 8px 8px 8px 28px;
     border-radius: 12px;
@@ -438,13 +454,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: all .4s;
     position: relative;
     align-items: center;
-  }
-
-  .article li a:hover {
-    background: linear-gradient(45deg, #01b3e3, #db38b5);
   }
 
   .article li a:before {
@@ -527,6 +538,13 @@
     background: #666;
   }
 
+  @media screen and (max-width: 1200px) {
+    .life ul li {
+      width: 12%;
+      padding-bottom: 12%;
+    }
+
+  }
 
   @media screen and (max-width: 768px) {
     .nr {
@@ -673,7 +691,7 @@
 document.querySelector('html').classList.add('dj')
 let bai = document.querySelector('.bai')
 //加載...
-let f = ["photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1","bg1", "bg2", "bg3", "bg4"];
+let f = ["photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1", "bg1", "bg2", "bg3", "bg4"];
 let fm = '.jpg'
 let url = []
 for (let i = 0; i < f.length; i++) {
@@ -851,6 +869,12 @@ function openWin(type, el) {
     } else {
         let nr = document.createElement('div')
         let title = document.createElement('h3')
+        let time;
+        if (el.time) {
+            time = document.createElement('div')
+            time.className = 'time'
+            time.innerText = el.time
+        }
         let ms = document.createElement('div')
         nr.className = 'nr'
         title.className = 'title'
@@ -858,6 +882,9 @@ function openWin(type, el) {
         ms.innerHTML = el.nr
         title.innerText = el.title
         nr.appendChild(title)
+        if (el.time) {
+            nr.appendChild(time)
+        }
         nr.appendChild(ms)
         wink.appendChild(nr)
         //处理图片懒加载 BEGIN
