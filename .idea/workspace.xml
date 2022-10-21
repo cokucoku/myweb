@@ -19,33 +19,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="633" column="34" selection-start-line="633" selection-start-column="34" selection-end-line="633" selection-end-column="34" />
+            <state relative-caret-position="602">
+              <caret line="825" column="20" selection-start-line="825" selection-start-column="20" selection-end-line="825" selection-end-column="20" />
               <folding>
                 <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#2;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="6" column="808" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/loadImg.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="26" column="61" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="61" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,7 +42,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>filter</find>
       <find>scrub</find>
       <find>h2</find>
       <find>more</find>
@@ -72,7 +50,6 @@
       <find>sectio</find>
       <find>1.jpg.jpg</find>
       <find>20220417</find>
-      <find>article</find>
       <find>ms</find>
       <find>menu</find>
       <find>tops</find>
@@ -93,6 +70,8 @@
       <find>bg</find>
       <find>blo</find>
       <find>video</find>
+      <find>article</find>
+      <find>page</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,18 +164,21 @@
       <workItem from="1665623106398" duration="9196000" />
       <workItem from="1665640162446" duration="8699000" />
       <workItem from="1665710298422" duration="5076000" />
-      <workItem from="1665984118640" duration="3369000" />
+      <workItem from="1665984118640" duration="3585000" />
+      <workItem from="1666060554229" duration="17000" />
+      <workItem from="1666234783380" duration="1168000" />
+      <workItem from="1666319977262" duration="9531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110859000" />
+    <option name="totallyTimeSpent" value="121791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12802951" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -376,31 +358,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="633" column="34" selection-start-line="633" selection-start-column="34" selection-end-line="633" selection-end-column="34" />
-          <folding>
-            <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#2;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="808" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/loadImg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="26" column="61" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="61" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="825" column="20" selection-start-line="825" selection-start-column="20" selection-end-line="825" selection-end-column="20" />
+          <folding>
+            <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

@@ -435,6 +435,31 @@
     padding-top: 12vh;
   }
 
+  .article .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  .article .page span {
+    background: #444;
+    padding: 0 8px;
+    cursor: pointer;
+  }
+
+  .article .page span:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+
+  .article .page span:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+
+  .article .page span.cur {
+    background: #db38b5;
+  }
+
   .article ul {
     flex-wrap: wrap;
     display: flex;
@@ -637,7 +662,8 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-size: cover;background-repeat: no-repeat;
+      background-size: cover;
+      background-repeat: no-repeat;
       z-index: -1;
     }
 
@@ -783,13 +809,63 @@ new loadImg({
 //
 batch('.works li')
 //文章获取
-let articleul = document.querySelector('.article').querySelector('ul')
+let pageNum;
+let curpage = 1
+let totalPage
+let sw = window.innerWidth
+pages(sw)
+window.addEventListener('resize', () => {
+    sw = window.innerWidth
+    pages(sw)
+})
+
+function pages(sw) {
+    if (sw > 768) {
+        pageNum = 30
+    } else {
+        pageNum = 16
+    }
+}
+
+
+let article = document.querySelector('.article')
+let articleul = article.querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/article').then((rs) => {
     return rs.json()
 
 }).then((data) => {
+    totalPage = Math.ceil(data.length / pageNum)
+    let page = document.createElement('div')
+    page.className = 'page'
+    loadData(data, curpage)
+    for (let i = 1; i <= totalPage; i++) {
+        let span = document.createElement('span')
+        span.innerText = i
+        if (curpage === i) {
+            span.className = 'cur'
+        }
+        span.addEventListener('click', () => {
+            curpage = i
+            Array.from(span.parentNode.children).forEach((el)=>{
+                el.className=''
+            })
+            if (curpage === i) {
+                span.className = 'cur'
+            }
+            loadData(data, curpage)
+        })
+        page.appendChild(span)
+    }
+    article.appendChild(page)
+
+})
+
+function loadData(data, curpage) {
+    let curpageData = data.filter((el, index) => {
+        return index >= (curpage - 1) * pageNum && index < curpage * pageNum
+    })
     articleul.innerHTML = ''
-    data.forEach((el) => {
+    curpageData.forEach((el) => {
         let li = document.createElement('li')
         let a = document.createElement('a')
         a.innerText = el.title
@@ -800,12 +876,13 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
         articleul.appendChild(li)
     })
     batch('.article li')
-})
+
+}
+
 //生活图片获取
 let lifeul = document.querySelector('.life').querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life').then((rs) => {
     return rs.json()
-
 }).then((data) => {
     lifeul.innerHTML = ''
     data.forEach((el) => {
