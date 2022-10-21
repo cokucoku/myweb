@@ -82,6 +82,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: solid 8px #333;
+    border-radius: 16px;
   }
 
   .menu {
@@ -310,7 +312,7 @@
   }
 
   .sec1 .content img {
-    width: 140px;
+    width: clamp(80px, 7vw, 7vw);;
     border: solid 4px #fff;
     filter: drop-shadow(1px 1px 3px black);
     margin-bottom: 10vh;
@@ -458,6 +460,7 @@
 
   .article .page span.cur {
     background: #db38b5;
+    pointer-events: none;
   }
 
   .article ul {
