@@ -338,6 +338,22 @@
   .works ul li {
     line-height: 44px;
     margin-bottom: 15px;
+    position: relative;
+  }
+  .works ul li.hot:before{
+    content: '推荐';
+    position: absolute;
+    background: red;
+    color: #fff;
+    border-radius: 14%;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    height: 20px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .works ul li a {
@@ -732,9 +748,10 @@
     <h2>Works</h2>
     <div class="works">
       <ul>
+        <li class="hot"><a href="https://sheep.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>养了个羊</a></li>
         <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
         <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
-        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
+        <li><a href="https://code.leeao82.com/#/plugin/" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
         <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
       </ul>
     </div>
