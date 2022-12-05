@@ -917,6 +917,9 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
     return rs.json()
 }).then((data) => {
     lifeul.innerHTML = ''
+    data=data.filter((el,xh)=>{
+        return xh<14
+    })
     data.forEach((el) => {
         let li = document.createElement('li')
         let text = document.createElement('div')
