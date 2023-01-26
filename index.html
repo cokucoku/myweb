@@ -330,7 +330,8 @@
   .pos .iconfont {
     padding-right: .5vw;
   }
-  .works{
+
+  .works {
     width: 78vw;
     max-width: 500px;
   }
@@ -349,10 +350,12 @@
     position: relative;
     padding-right: 15px;
   }
-  .works ul li:nth-child(even){
+
+  .works ul li:nth-child(even) {
     margin-right: 0;
   }
-  .works ul li.hot:before{
+
+  .works ul li.hot:before {
     content: '推荐';
     position: absolute;
     background: red;
@@ -759,7 +762,8 @@
     <h2>Works</h2>
     <div class="works">
       <ul>
-        <li class="hot"><a href="https://sheep.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>养了个羊</a></li>
+        <li class="hot"><a href="https://sheep.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>养了个羊</a>
+        </li>
         <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
         <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
         <li><a href="https://code.leeao82.com/#/plugin/" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
@@ -878,8 +882,8 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
         }
         span.addEventListener('click', () => {
             curpage = i
-            Array.from(span.parentNode.children).forEach((el)=>{
-                el.className=''
+            Array.from(span.parentNode.children).forEach((el) => {
+                el.className = ''
             })
             if (curpage === i) {
                 span.className = 'cur'
@@ -893,6 +897,15 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/artic
 })
 
 function loadData(data, curpage) {
+    data.sort((a, b) => {
+        let atime = a.time.replace(/-/g, '')
+        let btime = b.time.replace(/-/g, '')
+        if (atime >= btime&&a.id>=b.id) {
+            return -1
+        } else {
+            return 1
+        }
+    })
     let curpageData = data.filter((el, index) => {
         return index >= (curpage - 1) * pageNum && index < curpage * pageNum
     })
@@ -907,7 +920,7 @@ function loadData(data, curpage) {
         })
         articleul.appendChild(li)
     })
-    batch('.article li')
+    //batch('.article li')
 
 }
 
@@ -916,9 +929,18 @@ let lifeul = document.querySelector('.life').querySelector('ul')
 fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life').then((rs) => {
     return rs.json()
 }).then((data) => {
+    data.sort((a, b) => {
+        let atime = a.time.replace(/-/g, '')
+        let btime = b.time.replace(/-/g, '')
+        if (atime >= btime&&a.id>=b.id) {
+            return -1
+        } else {
+            return 1
+        }
+    })
     lifeul.innerHTML = ''
-    data=data.filter((el,xh)=>{
-        return xh<14
+    data = data.filter((el, xh) => {
+        return xh < 14
     })
     data.forEach((el) => {
         let li = document.createElement('li')
