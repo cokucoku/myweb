@@ -88,7 +88,7 @@
     }
 
     .mywin .win .nr {
-        font-size: 0.208333333333rem;
+        font-size: clamp(12px, 0.208333333333rem, 0.208333333333rem);
         line-height: 0.390625rem;
         padding: 0 27px;
     }
@@ -96,25 +96,24 @@
     .mywin .btn1 {
         width: 1.822916666667rem;
         height: 0.625rem;
-        font-size: 0.208333333333rem
+        font-size: clamp(12px, 0.208333333333rem, 0.208333333333rem);
     }
 
     .mywin .btn2 {
         width: 1.822916666667rem;
         height: 0.625rem;
-        font-size: 0.208333333333rem
+        font-size: clamp(12px, 0.208333333333rem, 0.208333333333rem);
     }
 
     .mywin .btn3 {
         width: 2.252604166667rem;
         height: 0.625rem;
-        font-size: 0.208333333333rem
+        font-size: clamp(12px, 0.208333333333rem, 0.208333333333rem);
     }
 
     .manybtn {
       margin: 2.0765625rem auto 0;
     }
-
 
 }
 
