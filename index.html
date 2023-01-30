@@ -932,7 +932,7 @@ fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life'
     data.sort((a, b) => {
         let atime = a.time.replace(/-/g, '')
         let btime = b.time.replace(/-/g, '')
-        if (atime >= btime&&a.id>=b.id) {
+        if (atime >= btime) {
             return -1
         } else {
             return 1
