@@ -120,6 +120,9 @@ body {
     margin-top: -354px;
     background: url("img/win.png");
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mywin .win .close {
@@ -189,11 +192,14 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 75px auto 0;
+    /*margin: 75px auto 0;*/
+    margin:0 auto;
     width: 84%;
-    gap: 10px;
 }
-
+.manybtn a{
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
 .mywin .btn3 {
     width: 173px;
     height: 48px;

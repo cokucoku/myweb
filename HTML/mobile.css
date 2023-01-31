@@ -62,12 +62,10 @@
     }
 
     .mywin .win {
-        width: 90%;
-        height: 0;
-        padding-bottom: 113.785714285714%;
-        margin-left: -45%;
-        margin-top: 0;
-        transform: translateY(-50%);
+        width:9rem;
+        height: 11.3785714285714rem;
+        margin-left: -4.5rem;
+        margin-top: -5.689285714286rem;
     }
 
     .mywin .win .close {
@@ -88,7 +86,7 @@
     }
 
     .mywin .win .nr {
-        font-size: 0.208333333333rem;
+        font-size: 0.208333333333rem ;
         line-height: 0.390625rem;
         padding: 0 27px;
     }
@@ -112,9 +110,8 @@
     }
 
     .manybtn {
-      margin: 2.0765625rem auto 0;
+      /*margin: 2.0765625rem auto 0;*/
     }
-
 
 }
 
