@@ -402,8 +402,6 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    overflow-y: hidden;
-    height: 64vh;
   }
 
   .life ul li {
@@ -635,9 +633,6 @@
       padding-right: 10px;
       padding-bottom: 10px;
     }
-    .article .page{
-      font-size: 12px;
-    }
 
     .progress {
       height: 8px;
@@ -787,7 +782,7 @@
       <ul>
       </ul>
     </div>
-<!--    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>-->
+    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>
   </div>
 </section>
 <section>
@@ -798,8 +793,8 @@
     <h2>Articles</h2>
     <div class="article">
       <ul>
+
       </ul>
-      <div class="page"></div>
     </div>
   </div>
 </section>
@@ -866,72 +861,98 @@ function pages(sw) {
     } else {
         pageNum = 16
     }
-    loadData(pageNum, curpage)
 }
 
 
-function loadData(pageNum, curpage) {
-    let article = document.querySelector('.article')
-    let articleul = article.querySelector('ul')
-    fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage=' + pageNum + '&page=' + curpage+'&order=["mtime DESC", "id DESC"]').then((rs) => {
-        return rs.json()
-    }).then((data) => {
-        data=data.data
-        articleul.innerHTML = ''
-        data.list.forEach((el) => {
-            let li = document.createElement('li')
-            let a = document.createElement('a')
-            a.innerText = el.title
-            li.appendChild(a)
-            li.addEventListener('click', () => {
-                openWin('article', el)
+let article = document.querySelector('.article')
+let articleul = article.querySelector('ul')
+fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage='+pageNum).then((rs) => {
+    return rs.json()
+}).then((data) => {
+    totalPage = Math.ceil(data.data.total / pageNum)
+    let page = document.createElement('div')
+    page.className = 'page'
+    loadData(data, curpage)
+    for (let i = 1; i <= totalPage; i++) {
+        let span = document.createElement('span')
+        span.innerText = i
+        if (curpage === i) {
+            span.className = 'cur'
+        }
+        span.addEventListener('click', () => {
+            curpage = i
+            Array.from(span.parentNode.children).forEach((el) => {
+                el.className = ''
             })
-            articleul.appendChild(li)
-        })
-
-        totalPage = Math.ceil(data.total / pageNum)
-        let page = document.querySelector('.page')
-        page.innerHTML = ''
-        for (let i = 1; i <= totalPage; i++) {
-            let span = document.createElement('span')
-            span.innerText = i
             if (curpage === i) {
                 span.className = 'cur'
             }
-            span.addEventListener('click', () => {
-                curpage = i
-                Array.from(span.parentNode.children).forEach((el) => {
-                    el.className = ''
-                })
-                if (curpage === i) {
-                    span.className = 'cur'
-                }
-                loadData(pageNum, curpage)
-            })
-            page.appendChild(span)
+            loadData(data, curpage)
+        })
+        page.appendChild(span)
+    }
+    article.appendChild(page)
+
+})
+
+function loadData(data, curpage) {
+    data.sort((a, b) => {
+        let atime = a.time.replace(/-/g, '')
+        let btime = b.time.replace(/-/g, '')
+        if (atime >= btime&&a.id>=b.id) {
+            return -1
+        } else {
+            return 1
         }
     })
+    let curpageData = data.filter((el, index) => {
+        return index >= (curpage - 1) * pageNum && index < curpage * pageNum
+    })
+    articleul.innerHTML = ''
+    curpageData.forEach((el) => {
+        let li = document.createElement('li')
+        let a = document.createElement('a')
+        a.innerText = el.title
+        li.appendChild(a)
+        li.addEventListener('click', () => {
+            openWin('article', el)
+        })
+        articleul.appendChild(li)
+    })
+    //batch('.article li')
 
 }
 
 //生活图片获取
 let lifeul = document.querySelector('.life').querySelector('ul')
-fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=life&perpage=100&page=' + curpage+'&order=["mtime DESC", "id DESC"]').then((rs) => {
+fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/life').then((rs) => {
     return rs.json()
 }).then((data) => {
+    data.sort((a, b) => {
+        let atime = a.time.replace(/-/g, '')
+        let btime = b.time.replace(/-/g, '')
+        if (atime >= btime) {
+            return -1
+        } else {
+            return 1
+        }
+    })
     lifeul.innerHTML = ''
-    data.data.list.forEach((el) => {
+    data = data.filter((el, xh) => {
+        return xh < 14
+    })
+    data.forEach((el) => {
         let li = document.createElement('li')
         let text = document.createElement('div')
         let i = document.createElement('i')
-        i.innerText = el.mtime
+        i.innerText = el.time
         let span = document.createElement('span')
         span.innerText = el.title
         text.className = 'text'
         text.appendChild(i)
         text.appendChild(span)
         let img = document.createElement('img')
-        img.src = el.tpic
+        img.src = el.pic
         li.appendChild(text)
         li.appendChild(img)
         lifeul.appendChild(li)
