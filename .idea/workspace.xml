@@ -3,7 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="81661efd-86b1-4f45-b28e-29ce9a4f6b7f" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/.idea/HTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/flexible.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/Close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/bb1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/bb2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/bigh1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/btn1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/btn2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/btn3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/probt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/probthv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/img/win.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/my.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bg3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/bg3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bg44.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/video.mp4" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,10 +42,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="872" column="37" selection-start-line="872" selection-start-column="37" selection-end-line="872" selection-end-column="37" />
+            <state relative-caret-position="208">
+              <caret line="378" column="16" selection-start-line="378" selection-start-column="16" selection-end-line="378" selection-end-column="16" />
               <folding>
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#15886#17092#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index -old.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-741">
+              <caret line="937" column="9" lean-forward="true" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -40,28 +75,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ms</find>
-      <find>menu</find>
-      <find>tops</find>
-      <find>name</find>
-      <find>lis</find>
-      <find>section</find>
-      <find>background-blend-mode</find>
-      <find>life</find>
-      <find>var</find>
-      <find>calc</find>
-      <find>cal</find>
-      <find>kg</find>
-      <find>mysss</find>
-      <find>batch</find>
-      <find>code</find>
-      <find>ne-q</find>
       <find>bg</find>
       <find>blo</find>
       <find>video</find>
       <find>article</find>
       <find>page</find>
-      <find>img</find>
       <find>.dj</find>
       <find>dj</find>
       <find>21.jpg</find>
@@ -69,7 +87,24 @@
       <find>5.j'p'g</find>
       <find>8.jpg</find>
       <find>5.jpg</find>
+      <find>url</find>
+      <find>ScrollTrigger</find>
+      <find>batch</find>
+      <find>btn_play</find>
+      <find>curpage</find>
+      <find>scroll</find>
+      <find>icon-minus</find>
+      <find>swiper</find>
+      <find>swiper-slide</find>
+      <find>img</find>
+      <find>works</find>
       <find>openWin</find>
+      <find>SWIPER</find>
+      <find>progressEffect</find>
+      <find>.life</find>
+      <find>40vh</find>
+      <find>work</find>
+      <find>life</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,6 +120,7 @@
         <option value="D:/Desktop/11.html" />
         <option value="$PROJECT_DIR$/js/loadImg.js" />
         <option value="$PROJECT_DIR$/js/1.js" />
+        <option value="$USER_HOME$/Desktop/11.html" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -100,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,13 +152,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myweb1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -183,14 +219,19 @@
       <workItem from="1691739581627" duration="109000" />
       <workItem from="1691740180536" duration="11000" />
       <workItem from="1691740969706" duration="26000" />
+      <workItem from="1712021165787" duration="5652000" />
+      <workItem from="1712034440571" duration="1135000" />
+      <workItem from="1712121298345" duration="5014000" />
+      <workItem from="1712126795777" duration="11944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154532000" />
+    <option name="totallyTimeSpent" value="178277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26923078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -372,16 +413,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/loadImg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="344">
           <caret line="22" column="17" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -389,12 +423,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.js" />
+    <entry file="file://$PROJECT_DIR$/js/1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/swiper.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="86" column="26" lean-forward="true" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index -old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="937" column="9" lean-forward="true" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="872" column="37" selection-start-line="872" selection-start-column="37" selection-end-line="872" selection-end-column="37" />
+        <state relative-caret-position="208">
+          <caret line="378" column="16" selection-start-line="378" selection-start-column="16" selection-end-line="378" selection-end-column="16" />
           <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#15886#17092#0" />
           </folding>
         </state>
       </provider>

@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_3352173_7m2uv72ag24.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
   <title>Leeao个人网页</title>
   <style>
   * {
@@ -176,6 +177,7 @@
 
   .wink {
     position: absolute;
+    display: flex;
     max-width: 800px;
     width: 100%;
     left: 50%;
@@ -332,138 +334,87 @@
   }
 
   .works {
-    width: 78vw;
-    max-width: 500px;
-  }
-
-  .works ul {
-    padding-top: 14vh;
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% + 15px);
-  }
-
-  .works ul li {
-    width: 50%;
-    line-height: 44px;
-    padding-bottom: 15px;
-    position: relative;
-    padding-right: 15px;
-  }
-
-  .works ul li:nth-child(even) {
-    margin-right: 0;
-  }
-
-  .works ul li.hot:before {
-    content: '推荐';
-    position: absolute;
-    background: red;
-    color: #fff;
-    border-radius: 14%;
-    right: 15px;
-    top: 0;
-    font-size: 12px;
-    height: 20px;
-    width: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .works ul li a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    background: conic-gradient(from 45deg, #ffad61, #ff7b42, #a52d1c);
-    border-radius: 22px;
-    justify-content: center;
-  }
-
-  .works ul li a:hover {
-    background: conic-gradient(from 45deg, #ffad61, #ff7b42, #f00);
-  }
-
-  .works ul li i {
-    font-size: 12px;
-    padding-right: .5vw;
-  }
-
-  .life {
     width: 90vw;
-    display: flex;
-    justify-content: center;
+    height: 40vh;
+    margin-top: 140px;
   }
 
-  .life ul {
-    padding-top: 8vh;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    overflow-y: hidden;
-    height: 64vh;
+  .works a .title {
+    color: #fff;
   }
 
-  .life ul li {
-    width: 8%;
-    padding-bottom: 8%;
-    margin: 1vw 1vw;
-    position: relative;
-    overflow: hidden;
-    border-radius: 100%;
-  }
-
-  .life ul li .text {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 3;
+  .works .swiper-slide a {
     display: flex;
+    border: solid 1px #fff;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, .6);
-    border-radius: 100%;
-    opacity: 0;
-    transition: all .4s;
-    cursor: pointer;
+    background: #000;
+    text-decoration: none;
+    border-radius: 18px;
+    overflow: hidden;
+
   }
 
-  .life ul li .text span {
-    font-size: 1vw;
-    padding: 0 1vw;
-    text-align: center;
-    transition: all .4s;
-    transform: translateY(200%);
+  .works .swiper-slide .img {
+    width: 100%;
+    padding-bottom: 100%;
+    background: #eee;
+    position: relative;
   }
 
-  .life ul li .text i {
-    font-size: .6vw;
-    transition: all .4s;
-    transform: translateY(100%);
-  }
-
-  .life ul li:hover .text {
-    opacity: 1;
-  }
-
-  .life ul li:hover .text span, .life ul li:hover .text i {
-    transform: translateY(0%);
-  }
-
-
-  .life ul li img {
+  .works .swiper-slide .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: .4vw;
     position: absolute;
-    background: #fff;
-    top: 0;
-    border-radius: 100%;
   }
+
+  .works .swiper-slide .title {
+    font-size: 26px;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+
+  .life {
+    width: 90vw;
+  }
+  .life .swiper-container{
+    padding: 12vw 0;
+
+  }
+
+  .life .swiper-slide {
+    display: flex;
+    border: solid 1px #fff;
+    flex-direction: column;
+    background: #000;
+    text-decoration: none;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+
+  }
+
+  .life .swiper-slide .img {
+    width: 100%;
+    padding-bottom: 100%;
+    background: #eee;
+    position: relative;
+  }
+
+  .life .swiper-slide .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  .life .swiper-slide .title {
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 0;
+  }
+
 
   .article {
     padding-top: 12vh;
@@ -635,7 +586,8 @@
       padding-right: 10px;
       padding-bottom: 10px;
     }
-    .article .page{
+
+    .article .page {
       font-size: 12px;
     }
 
@@ -742,6 +694,10 @@
     .menu li i {
       display: none
     }
+
+    .works {
+      margin-top: 40px;
+    }
   }
 
   </style>
@@ -766,15 +722,12 @@
     <h1>工作</h1>
     <h2>Works</h2>
     <div class="works">
-      <ul>
-        <li class="hot"><a href="https://sheep.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>养了个羊</a>
-        </li>
-        <li><a href="https://docs.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>VUE组件库</a></li>
-        <li><a href="https://code.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>个人微码</a></li>
-        <li><a href="https://code.leeao82.com/#/plugin/" target="_blank"><i class="icon-add iconfont"></i>JS插件</a></li>
-        <li><a href="https://code.leeao82.com/#/utils/" target="_blank"><i class="icon-add iconfont"></i>工具类</a></li>
-        <li><a href="https://history.leeao82.com" target="_blank"><i class="icon-add iconfont"></i>中国历史事件</a></li>
-      </ul>
+      <div class="swiper-container workSwiper">
+        <div class="swiper-wrapper worksUl">
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -784,10 +737,13 @@
     <h1>生活</h1>
     <h2>Lifes</h2>
     <div class="life">
-      <ul>
-      </ul>
+      <div class="swiper-container lifeSwiper">
+        <div class="swiper-wrapper lifeUl">
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-<!--    <a class="more" href="https://leeao8.gitee.io/life/" target="_blank"><i class="iconfont icon-add"></i></a>-->
   </div>
 </section>
 <section>
@@ -816,12 +772,13 @@
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script src="js/loadImg.js"></script>
+<script src="js/swiper.min.js"></script>
 <script>
 //先加载全站资源LOADING
 document.querySelector('html').classList.add('dj')
 let bai = document.querySelector('.bai')
 //加載...
-let f = ["photo", "https://leeao8.gitee.io/life/album/20220508/9", "https://leeao8.gitee.io/life/album/20220417/1", "https://leeao8.gitee.io/life/album/20220220/3", "https://leeao8.gitee.io/life/album/20220131-2/2", "https://leeao8.gitee.io/life/album/20200413/11", "https://leeao8.gitee.io/life/album/20200308/1", "https://leeao8.gitee.io/life/album/20200223/2", "https://leeao8.gitee.io/life/album/20191208/1", "https://leeao8.gitee.io/life/album/20191102/2", "https://leeao8.gitee.io/life/album/20190831/1", "https://leeao8.gitee.io/life/album/20160810/1", "https://leeao8.gitee.io/life/album/20160610/5", "https://leeao8.gitee.io/life/album/20160510/1", "https://leeao8.gitee.io/life/album/20220430/1", "bg1", "bg2", "bg3", "bg4"];
+let f = ["photo", "bg1", "bg2", "bg3", "bg4"];
 let fm = '.jpg'
 let url = []
 for (let i = 0; i < f.length; i++) {
@@ -848,7 +805,75 @@ new loadImg({
     }
 });
 //
-batch('.works li')
+let worksUl = document.querySelector('.worksUl')
+fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=works&perpage=100&order=["id DESC"]').then((rs) => {
+    return rs.json()
+}).then((data) => {
+    worksUl.innerHTML = ''
+    data.data.list.forEach((el) => {
+        let li = document.createElement('div')
+        li.classList.add('swiper-slide')
+        let a = document.createElement('a')
+        a.href = el.url
+        a.target = '_blank'
+        let imgs = document.createElement('div')
+        imgs.classList.add('img')
+        let title = document.createElement('div')
+        title.classList.add('title')
+        let img = document.createElement('img')
+        img.src = el.tpic
+        imgs.appendChild(img)
+        title.innerText = el.title
+        a.appendChild(imgs)
+        a.appendChild(title)
+        li.appendChild(a)
+        worksUl.appendChild(li)
+    })
+    new Swiper('.workSwiper', {
+        loop: true,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+        },
+        speed: 500,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+            1600: {
+                slidesPerView: 5,
+            },
+        },
+        on: {
+            setTranslate: function () {
+                let sp = this.params.slidesPerView
+                let slides = this.slides
+                for (i = 0; i < slides.length; i++) {
+                    let slide = slides.eq(i)
+                    let progress = slides[i].progress
+                    slide.transform('scale(' + (1 - Math.abs(progress) / (sp + 1)) + ')');
+
+                }
+            },
+            setTransition: function (transition) {
+                for (let i = 0; i < this.slides.length; i++) {
+                    let slide = this.slides.eq(i)
+                    slide.transition(transition);
+                }
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+})
+
 //文章获取
 let pageNum;
 let curpage = 1
@@ -873,10 +898,10 @@ function pages(sw) {
 function loadData(pageNum, curpage) {
     let article = document.querySelector('.article')
     let articleul = article.querySelector('ul')
-    fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage=' + pageNum + '&page=' + curpage+'&order=["mtime DESC", "id DESC"]').then((rs) => {
+    fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage=' + pageNum + '&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
         return rs.json()
     }).then((data) => {
-        data=data.data
+        data = data.data
         articleul.innerHTML = ''
         data.list.forEach((el) => {
             let li = document.createElement('li')
@@ -915,31 +940,68 @@ function loadData(pageNum, curpage) {
 }
 
 //生活图片获取
-let lifeul = document.querySelector('.life').querySelector('ul')
-fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=life&perpage=100&page=' + curpage+'&order=["mtime DESC", "id DESC"]').then((rs) => {
+let lifeUl = document.querySelector('.lifeUl')
+fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=life&perpage=100&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
     return rs.json()
 }).then((data) => {
-    lifeul.innerHTML = ''
+    lifeUl.innerHTML = ''
     data.data.list.forEach((el) => {
-        let li = document.createElement('li')
-        let text = document.createElement('div')
-        let i = document.createElement('i')
-        i.innerText = el.mtime
-        let span = document.createElement('span')
-        span.innerText = el.title
-        text.className = 'text'
-        text.appendChild(i)
-        text.appendChild(span)
+        let li = document.createElement('div')
+        li.classList.add('swiper-slide')
+        let imgs = document.createElement('div')
+        imgs.classList.add('img')
+        let title = document.createElement('div')
+        title.classList.add('title')
         let img = document.createElement('img')
         img.src = el.tpic
-        li.appendChild(text)
-        li.appendChild(img)
-        lifeul.appendChild(li)
+        imgs.appendChild(img)
+        title.innerText = el.title
+        li.appendChild(imgs)
+        li.appendChild(title)
+        lifeUl.appendChild(li)
         li.addEventListener('click', () => {
             openWin('article', el)
         })
     })
-    batch('.life li')
+    new Swiper('.lifeSwiper', {
+        loop: true,
+        speed: 500,
+        slidesPerView: 3,
+        spaceBetween: 10,
+        centeredSlides: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            768: {
+                slidesPerView: 7,
+            },
+            1600: {
+                slidesPerView: 13,
+            },
+        },
+        on: {
+            setTranslate: function () {
+                let sp = this.params.slidesPerView
+                let slides = this.slides
+                for (i = 0; i < slides.length; i++) {
+                    let slide = slides.eq(i)
+                    let progress = slides[i].progress
+                    slide.css('opacity', (1 - Math.abs(progress) / (sp-1)));
+                    slide.transform('translate3d(0,' + Math.abs(progress) * 20 + 'px, 0)');
+
+                }
+            },
+            setTransition: function (transition) {
+                for (let i = 0; i < this.slides.length; i++) {
+                    let slide = this.slides.eq(i)
+                    slide.transition(transition);
+                }
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 })
 //
 
@@ -1021,10 +1083,14 @@ function openWin(type, el) {
     mark.className = 'mark'
     if (type === 'video') {
         let video = document.createElement('video')
-        fetch('https://www.fastmock.site/mock/5f854ec44ed74b246903c6e75806ec14/api/video').then((rs) => {
+        fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=bgimg&perpage=100&order=["id ASC"]&where=["xs=0"]').then((rs) => {
             return rs.json()
         }).then((data) => {
-            video.src = data.url
+            let dd = data.data.list
+            let fi = dd.filter((el) => {
+                return el.video != ''
+            })
+            video.src = fi[0].video
         })
         video.autoplay = true
         wink.appendChild(video)
