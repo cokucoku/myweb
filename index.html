@@ -385,7 +385,7 @@
 
   .life .swiper-slide {
     display: flex;
-    border: solid 1px #444;
+    border: solid 3px #fff;
     flex-direction: column;
     background: #000;
     text-decoration: none;
@@ -397,7 +397,7 @@
 
   .life .swiper-slide .img {
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: 150%;
     background: #eee;
     position: relative;
   }
@@ -958,18 +958,18 @@ fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90
         })
     })
     new Swiper('.lifeSwiper', {
-        loop: true,
+        //loop: true,
         speed: 500,
         slidesPerView: 3,
-        spaceBetween: 10,
-        centeredSlides: true,
+        spaceBetween: 30,
+        //centeredSlides: true,
         watchSlidesProgress: true,
         breakpoints: {
             768: {
-                slidesPerView: 7,
+                slidesPerView: 5,
             },
             1600: {
-                slidesPerView: 13,
+                slidesPerView: 7,
             },
         },
         on: {
@@ -979,8 +979,10 @@ fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90
                 for (i = 0; i < slides.length; i++) {
                     let slide = slides.eq(i)
                     let progress = slides[i].progress
-                    slide.css('opacity', (1 - Math.abs(progress) / (sp-1)));
-                    slide.transform('translate3d(0,' + Math.abs(progress) * 20 + 'px, 0)');
+                    //slide.css('opacity', (1 - Math.abs(progress) / (sp-1)));
+                    //slide.transform('scale(' + (1 - Math.abs(progress) / (sp + 1)) + ')');
+                    console.log(Math.abs(progress))
+                    slide.transform('translate3d(0,' + Math.sin(i*sp*10)*(progress) * 20 + 'px, 0)');
 
                 }
             },

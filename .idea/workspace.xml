@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81661efd-86b1-4f45-b28e-29ce9a4f6b7f" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="421" column="3" lean-forward="true" selection-start-line="421" selection-start-column="3" selection-end-line="421" selection-end-column="3" />
+            <state relative-caret-position="354">
+              <caret line="984" column="76" selection-start-line="984" selection-start-column="76" selection-end-line="984" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -97,6 +98,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,14 +115,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../life" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -184,12 +185,13 @@
       <workItem from="1712034440571" duration="1135000" />
       <workItem from="1712121298345" duration="5014000" />
       <workItem from="1712126795777" duration="11944000" />
-      <workItem from="1712192213419" duration="1941000" />
+      <workItem from="1712192213419" duration="2531000" />
+      <workItem from="1712210007511" duration="2378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180218000" />
+    <option name="totallyTimeSpent" value="183186000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -412,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="421" column="3" lean-forward="true" selection-start-line="421" selection-start-column="3" selection-end-line="421" selection-end-column="3" />
+        <state relative-caret-position="354">
+          <caret line="984" column="76" selection-start-line="984" selection-start-column="76" selection-end-line="984" selection-end-column="76" />
         </state>
       </provider>
     </entry>
