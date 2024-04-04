@@ -981,7 +981,6 @@ fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90
                     let progress = slides[i].progress
                     //slide.css('opacity', (1 - Math.abs(progress) / (sp-1)));
                     //slide.transform('scale(' + (1 - Math.abs(progress) / (sp + 1)) + ')');
-                    console.log(Math.abs(progress))
                     slide.transform('translate3d(0,' + Math.sin(i*sp*10)*(progress) * 20 + 'px, 0)');
 
                 }
