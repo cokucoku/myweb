@@ -43,6 +43,7 @@
 
   .nr {
     background: #000;
+    width: 100%;
     padding: 25px;
     height: 80vh;
     overflow-y: auto;
@@ -78,7 +79,7 @@
   }
 
   .nr .ms img {
-    max-width: 100%;
+    max-width: 80%;
     margin-bottom: 15px;
     display: block;
     margin-left: auto;
@@ -380,19 +381,18 @@
   }
   .life .swiper-container{
     padding: 12vw 0;
-
   }
 
   .life .swiper-slide {
     display: flex;
-    border: solid 1px #fff;
+    border: solid 1px #444;
     flex-direction: column;
     background: #000;
     text-decoration: none;
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-
+    position: relative;
   }
 
   .life .swiper-slide .img {
@@ -411,8 +411,21 @@
 
   .life .swiper-slide .title {
     font-size: 16px;
-    text-align: center;
-    padding: 15px 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    top: 100%;
+    padding: 0 15px;
+  }
+  .life .swiper-slide:hover .title{
+    top: 0%;
+    opacity: 1;
   }
 
 
@@ -493,26 +506,7 @@
     background: #fff;
   }
 
-  .more {
-    text-decoration: none;
-    margin-top: 5vh;
-    color: #000;
-    background: #fff;
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: none;
-    transition: all .4s;
-    font-weight: bold;
-  }
 
-  .more:hover {
-    background: #ffad61;
-    color: #fff;
-  }
 
   .btn_play {
     background: url("btn_play.png");
@@ -1099,10 +1093,10 @@ function openWin(type, el) {
         let nr = document.createElement('div')
         let title = document.createElement('h3')
         let time;
-        if (el.time) {
+        if (el.mtime) {
             time = document.createElement('div')
             time.className = 'time'
-            time.innerText = el.time
+            time.innerText = el.mtime
         }
         let ms = document.createElement('div')
         nr.className = 'nr'
@@ -1111,7 +1105,7 @@ function openWin(type, el) {
         ms.innerHTML = el.nr
         title.innerText = el.title
         nr.appendChild(title)
-        if (el.time) {
+        if (el.mtime) {
             nr.appendChild(time)
         }
         nr.appendChild(ms)
