@@ -806,7 +806,7 @@ new loadImg({
 });
 //
 let worksUl = document.querySelector('.worksUl')
-fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=works&perpage=100&order=["id DESC"]').then((rs) => {
+fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=works&perpage=100&order=["id DESC"]').then((rs) => {
     return rs.json()
 }).then((data) => {
     worksUl.innerHTML = ''
@@ -898,7 +898,7 @@ function pages(sw) {
 function loadData(pageNum, curpage) {
     let article = document.querySelector('.article')
     let articleul = article.querySelector('ul')
-    fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage=' + pageNum + '&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
+    fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=article&perpage=' + pageNum + '&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
         return rs.json()
     }).then((data) => {
         data = data.data
@@ -941,7 +941,7 @@ function loadData(pageNum, curpage) {
 
 //生活图片获取
 let lifeUl = document.querySelector('.lifeUl')
-fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=life&perpage=100&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
+fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=life&perpage=100&page=' + curpage + '&order=["mtime DESC", "id DESC"]').then((rs) => {
     return rs.json()
 }).then((data) => {
     lifeUl.innerHTML = ''
@@ -1083,7 +1083,7 @@ function openWin(type, el) {
     mark.className = 'mark'
     if (type === 'video') {
         let video = document.createElement('video')
-        fetch('http://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=bgimg&perpage=100&order=["id ASC"]&where=["xs=0"]').then((rs) => {
+        fetch('https://hn216.api.yesapi.cn/api/App/Table/FreeQuery?app_key=1D5AF16FD7D90EE3C5CF70D088249505&model_name=bgimg&perpage=100&order=["id ASC"]&where=["xs=0"]').then((rs) => {
             return rs.json()
         }).then((data) => {
             let dd = data.data.list

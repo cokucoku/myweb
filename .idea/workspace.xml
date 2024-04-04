@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81661efd-86b1-4f45-b28e-29ce9a4f6b7f" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/.idea/HTML.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/flexible.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/Close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/bb1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/bb2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/bigh1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/btn1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/btn2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/btn3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/probt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/probthv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/img/win.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/mobile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/my.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bg3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/bg3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bg44.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video.mp4" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,23 +18,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="378" column="16" selection-start-line="378" selection-start-column="16" selection-end-line="378" selection-end-column="16" />
-              <folding>
-                <element signature="e#15886#17092#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index -old.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-741">
-              <caret line="937" column="9" lean-forward="true" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="824">
+              <caret line="808" column="12" selection-start-line="808" selection-start-column="12" selection-end-line="808" selection-end-column="12" />
+              <caret line="900" column="16" selection-start-line="900" selection-start-column="16" selection-end-line="900" selection-end-column="16" />
+              <caret line="943" column="12" selection-start-line="943" selection-start-column="12" selection-end-line="943" selection-end-column="12" />
+              <caret line="1085" column="20" selection-start-line="1085" selection-start-column="20" selection-end-line="1085" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -125,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -223,11 +187,12 @@
       <workItem from="1712034440571" duration="1135000" />
       <workItem from="1712121298345" duration="5014000" />
       <workItem from="1712126795777" duration="11944000" />
+      <workItem from="1712192213419" duration="236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178277000" />
+    <option name="totallyTimeSpent" value="178513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -443,8 +408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index -old.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="937" column="9" lean-forward="true" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
+        <state relative-caret-position="24">
+          <caret line="937" column="9" selection-start-line="937" selection-start-column="9" selection-end-line="937" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
           </folding>
@@ -453,11 +418,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="378" column="16" selection-start-line="378" selection-start-column="16" selection-end-line="378" selection-end-column="16" />
-          <folding>
-            <element signature="e#15886#17092#0" />
-          </folding>
+        <state relative-caret-position="824">
+          <caret line="808" column="12" selection-start-line="808" selection-start-column="12" selection-end-line="808" selection-end-column="12" />
+          <caret line="900" column="16" selection-start-line="900" selection-start-column="16" selection-end-line="900" selection-end-column="16" />
+          <caret line="943" column="12" selection-start-line="943" selection-start-column="12" selection-end-line="943" selection-end-column="12" />
+          <caret line="1085" column="20" selection-start-line="1085" selection-start-column="20" selection-end-line="1085" selection-end-column="20" />
         </state>
       </provider>
     </entry>
